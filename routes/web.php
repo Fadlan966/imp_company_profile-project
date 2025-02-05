@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/portofolio', function () {
-    return view('welcome');
+    return view('portofolio');
 });
 Route::get('/contact-us', function () {
     return view('contact_us');
+});
+
+Route::get('/homepage', function () {
+    return view('homepage');
 });
