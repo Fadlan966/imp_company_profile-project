@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\MilestoneResource\Pages;
-use App\Filament\Resources\MilestoneResource\RelationManagers;
-use App\Models\Milestone;
+use App\Filament\Resources\DivisionResource\Pages;
+use App\Filament\Resources\DivisionResource\RelationManagers;
+use App\Models\Division;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class MilestoneResource extends Resource
+class DivisionResource extends Resource
 {
-    protected static ?string $model = Milestone::class;
+    protected static ?string $model = Division::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -25,13 +25,13 @@ class MilestoneResource extends Resource
             ->schema([
                 Forms\Components\Card::make()
                 ->schema([
-                    Forms\Components\TextInput::make('year')
-                        ->numeric()
-                        ->minValue(1950)
-                        ->maxValue(2050),
-                    Forms\Components\TextArea::make('caption')
+                    Forms\Components\TextInput::make('name')
                         ->required()
                         ->maxLength(200),
+                    Forms\Components\TextArea::make('caption')
+                        ->required()
+                        ->rows(4)
+                        ->maxLength(300),
                 ])
             ]);
     }
@@ -40,7 +40,7 @@ class MilestoneResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('year')->searchable(),
+                Tables\Columns\TextColumn::make('name')->searchable(),
                 Tables\Columns\TextColumn::make('caption')->searchable()->wrap(),
             ])
             ->filters([
@@ -67,9 +67,9 @@ class MilestoneResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListMilestones::route('/'),
-            'create' => Pages\CreateMilestone::route('/create'),
-            'edit' => Pages\EditMilestone::route('/{record}/edit'),
+            'index' => Pages\ListDivisions::route('/'),
+            'create' => Pages\CreateDivision::route('/create'),
+            'edit' => Pages\EditDivision::route('/{record}/edit'),
         ];
     }
 }

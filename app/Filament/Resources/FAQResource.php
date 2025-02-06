@@ -43,7 +43,7 @@ class FAQResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('question')->searchable(),
-                Tables\Columns\TextColumn::make('answer')->limit(200)->wrap()->searchable(),
+                Tables\Columns\TextColumn::make('answer')->limit(200)->wrap()->searchable()->wrap(),
                 Tables\Columns\IconColumn::make('is_show')->boolean(),
             ])
             ->filters([
