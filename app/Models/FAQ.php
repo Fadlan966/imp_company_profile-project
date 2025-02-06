@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class FAQ extends Model
 {
     use HasFactory;
+
+    protected $casts = [
+        'is_show' => 'boolean',
+    ];
 }

@@ -15,21 +15,21 @@ class FAQSeeder extends Seeder
     {
         DB::table('f_a_q_s')->insert([
             [
-                'name' => 'What is this company about?',
+                'question' => 'What is this company about?',
                 'answer' => 'We provide high-quality services in various fields.',
                 'is_show' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'How can I contact support?',
+                'question' => 'How can I contact support?',
                 'answer' => 'You can contact us via email at support@example.com.',
                 'is_show' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'name' => 'Where is the company located?',
+                'question' => 'Where is the company located?',
                 'answer' => 'Our headquarters is in Jakarta, Indonesia.',
                 'is_show' => false,
                 'created_at' => now(),

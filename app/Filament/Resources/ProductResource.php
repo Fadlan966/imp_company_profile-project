@@ -66,7 +66,7 @@ class ProductResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
-            ])->tooltip('Actions'),
+            ])->tooltip('More'),
         ])
         ->bulkActions([
             Tables\Actions\BulkActionGroup::make([

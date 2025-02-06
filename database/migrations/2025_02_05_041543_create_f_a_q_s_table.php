@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('f_a_q_s', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('question');
             $table->string('answer');
             $table->boolean('is_show');
             $table->timestamps();
