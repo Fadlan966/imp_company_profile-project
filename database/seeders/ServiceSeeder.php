@@ -16,18 +16,21 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             [
                 'title' => 'Maintain',
+                'image' => 'masbro.jpg',
                 'is_public' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'title' => 'Develop',
+                'image' => 'masbro.jpg',
                 'is_public' => true,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'title' => 'Consulting',
+                'image' => 'masbro.jpg',
                 'is_public' => false,
                 'created_at' => now(),
                 'updated_at' => now(),
