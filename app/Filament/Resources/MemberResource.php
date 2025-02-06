@@ -24,7 +24,16 @@ class MemberResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Card::make()
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->required()
+                        ->maxLength(200),
+                    Forms\Components\Select::make('division_id')
+                        ->relationship(name: 'division', titleAttribute: 'name')
+                        ->searchable(['name'])->preload(),
+                    Forms\Components\Checkbox::make('is_show'),
+                ])
             ]);
     }
 
