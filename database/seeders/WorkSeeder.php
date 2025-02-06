@@ -16,16 +16,19 @@ class WorkSeeder extends Seeder
         DB::table('works')->insert([
             [
                 'image' => 'images/image1.jpg',
+                'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata rudal 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'image' => 'images/image2.jpg',
+                'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata pisang 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'image' => 'images/image3.jpg',
+                'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata terong 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
