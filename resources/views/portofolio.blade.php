@@ -19,7 +19,7 @@
                 <a href="#">About Us</a>
                 <a href="#" class="active">Portofolio</a>
             </div>
-            <a href="#" class="contact-us">Contact Us <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></a>
+            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -119,7 +119,7 @@
     <!-- Footer Start -->
     <div class="footer">
         <div class="sub-nav">
-            <a href="#">Home</a>
+            <a href="/homepage">Home</a>
             <a href="#">About Us</a>
             <a href="#">Portofolio</a>
         </div>

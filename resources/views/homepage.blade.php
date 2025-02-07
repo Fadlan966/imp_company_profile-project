@@ -22,7 +22,7 @@
                 <a href="#">About Us</a>
                 <a href="/portofolio">Portofolio</a>
             </div>
-            <a href="#" class="contact-us">Contact Us <img src="assets/arrowup.png" alt="" class="arrow-up" /></a>
+            <a href="/contact-us" class="contact-us">Contact Us <img src="assets/arrowup.png" alt="" class="arrow-up" /></a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -44,7 +44,7 @@
             Our team provides 24-hour support to help your business outperform
             competitors <br />with precise and cost-effective solutions
         </p>
-        <a href="#" class="contact-us" style="color: white">Contact Us <img src="assets/arrowup.png" alt=""
+        <a href="/contact-us" class="contact-us" style="color: white">Contact Us <img src="assets/arrowup.png" alt=""
                 class="arrow-up" /></a>
     </div>
 
