@@ -22,7 +22,7 @@
                 <a href="about-us">About Us</a>
                 <a href="/portofolio">Portofolio</a>
             </div>
-            <a href="/contact-us" class="contact-us">Contact Us <img src="assets/arrowup.png" alt="" class="arrow-up" /></a>
+            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}" class="arrow-up"/></a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -44,8 +44,8 @@
             Our team provides 24-hour support to help your business outperform
             competitors <br />with precise and cost-effective solutions
         </p>
-        <a href="/contact-us" class="contact-us" style="color: white">Contact Us <img src="assets/arrowup.png" alt=""
-                class="arrow-up" /></a>
+        <a href="/contact-us" class="contact-us" style="color: white">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}" alt="" class="arrow-right" />
+        </a>
     </div>
 
     <!-- Our Partner-->
@@ -381,7 +381,8 @@
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     Accordion Item #1
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
+                                        class="accordion-icon" />
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -400,7 +401,8 @@
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
                                     Accordion Item #2
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
+                                        class="accordion-icon" />
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
@@ -420,7 +422,8 @@
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
                                     Accordion Item #3
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
+                                        class="accordion-icon" />
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
@@ -439,7 +442,8 @@
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
                                     aria-controls="flush-collapseFour">
                                     Accordion Item #4
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
+                                        class="accordion-icon" />
                                 </button>
                             </h2>
                             <div id="flush-collapseFour" class="accordion-collapse collapse"
@@ -488,12 +492,12 @@
         <p class="company-info-detail">
             IMP Studio is a partner in planning, analysis, and information
         </p>
-            technology development for your business. Managed by a proficient team
-            with over 10 years of experience.
+        technology development for your business. Managed by a proficient team
+        with over 10 years of experience.
 
         <div class="details">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
-                viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-geo-alt" viewBox="0 0 16 16">
                 <path
                     d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -506,8 +510,8 @@
         </div>
 
         <div class="details">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
-                viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-geo-alt" viewBox="0 0 16 16">
                 <path
                     d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
                 <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
@@ -520,8 +524,8 @@
         </div>
 
         <div class="info">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope"
-                viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-envelope" viewBox="0 0 16 16">
                 <path
                     d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
             </svg>
@@ -529,8 +533,8 @@
         </div>
 
         <div class="info">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone"
-                viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-telephone" viewBox="0 0 16 16">
                 <path
                     d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
             </svg>
@@ -547,7 +551,8 @@
                 </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/impstudio.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_parent">
+            <a href="https://www.instagram.com/impstudio.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
                     <path
@@ -556,8 +561,8 @@
             </a>
             <!-- YouTube -->
             <a href="https://www.youtube.com/@IMPStudioID" target="_parent">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube"
-                    viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-youtube" viewBox="0 0 16 16">
                     <path
                         d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
                 </svg>
@@ -580,7 +585,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+</script>
 
 </html>

@@ -19,7 +19,7 @@
                 <a href="about-us">About Us</a>
                 <a href="#" class="active">Portofolio</a>
             </div>
-            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></a>
+            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('/img/arrowup.png') }}" class="arrow-up"></a>
         </nav>
     </div>
     <!-- Navbar End -->
