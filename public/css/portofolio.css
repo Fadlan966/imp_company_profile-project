@@ -73,12 +73,12 @@ body::-webkit-scrollbar {
     text-decoration: none;
   }
 
-  .navbar .home {
+  .navbar .portofolio {
     color: #a2d2ff;
     position: relative;
   }
 
-  .navbar .home::after {
+  .navbar .portofolio::after {
     background: #bde0fe;
     content: "";
     width: 100%;

@@ -16,8 +16,8 @@
             <img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo">
             <div class="pagination">
                 <a href="/homepage">Home</a>
-                <a href="about-us">About Us</a>
-                <a href="#" class="active">Portofolio</a>
+                <a href="/about-us">About Us</a>
+                <a href="#" class="portofolio">Portofolio</a>
             </div>
             <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('/img/arrowup.png') }}" class="arrow-up"></a>
         </nav>
