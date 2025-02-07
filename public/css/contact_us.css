@@ -24,6 +24,9 @@ body {
     color: #fff;
 }
 
+body::-webkit-scrollbar {
+    width: 0px;
+}
 
 /* Navbar */
 .nav-section{

@@ -121,7 +121,7 @@
         <div class="sub-nav">
             <a href="/homepage">Home</a>
             <a href="#">About Us</a>
-            <a href="#">Portofolio</a>
+            <a href="/portofolio">Portofolio</a>
         </div>
         <img class="imp-logo" src="{{ asset('/img/implogo.png') }}" alt="IMP Logo">
         <p class="company-info-detail">IMP Studio is a partner in planning, analysis, and information technology development for your business. Managed by a proficient team with over 10 years of experience.</p>

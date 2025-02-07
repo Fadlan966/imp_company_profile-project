@@ -470,7 +470,7 @@
                 Our team provides 24-hour support to help your business outperform
                 competitors with precise and cost-effective solutions
             </p>
-            <a href="#" class="contact-us">Contact Us
+            <a href="/contact-us" class="contact-us">Contact Us
                 <img src="{{ asset('img/chevron-right.svg') }}" alt="" class="arrow-right" />
             </a>
         </div>
@@ -478,18 +478,18 @@
     <!-- footer -->
     <div class="footer">
         <div class="sub-nav">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Portofolio</a>
+            <a href="/homepage">Home</a>
+            <a href="/about-us">About Us</a>
+            <a href="/portofolio">Portofolio</a>
         </div>
         <img loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
             class="imp-logo" alt="Company Logo" />
         <p class="company-info-detail">
             IMP Studio is a partner in planning, analysis, and information
+        </p>
             technology development for your business. Managed by a proficient team
             with over 10 years of experience.
-        </p>
 
         <div class="details">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"

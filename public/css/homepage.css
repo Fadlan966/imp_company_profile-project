@@ -92,6 +92,7 @@
     height: 0.6rem;
   }
 
+  /* status */
   .status-box {
     height: 35px;
     width: 168px;
@@ -129,6 +130,7 @@
     color: white;
   }
 
+  /* hero */
   .hero-text {
     font-family: "Outfit", serif;
     margin-top: 1rem;
@@ -151,6 +153,7 @@
     text-decoration: none;
   }
 
+  /* infinite generator */
   @keyframes slide {
     from {
       transform: translateX(0);
@@ -160,6 +163,7 @@
     }
   }
 
+  /* partner */
   .partners {
     text-align: center;
     margin-top: 11rem;
@@ -189,6 +193,7 @@
     margin-right: 15px; /* Jarak antar logo */
   }
 
+  /* why-us */
   .why-us-section {
     margin-top: 11rem;
     text-align: center;
@@ -264,6 +269,7 @@
     border-radius: 25px;
   }
 
+  /* our-mission */
   .our-mission-section {
     text-align: center;
     align-items: center;
@@ -284,6 +290,7 @@
     font-size: 20px;
   }
 
+  /* work */
   .work-proud-section {
     text-align: center;
     align-items: center;
@@ -734,6 +741,7 @@
     transform: rotate(180deg);
   }
 
+  /* sub-footer */
   .sub-footer{
     font-family: "Outif" serif;
     display: flex;
@@ -778,6 +786,7 @@
     margin-left: .2rem;
   }
 
+/* footer */
   .footer{
     display: flex;
     align-items: center;
