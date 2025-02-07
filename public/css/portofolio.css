@@ -290,66 +290,75 @@ body::-webkit-scrollbar {
 
 
 /* Footer */
-.footer{
+  .footer{
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #111213;
     width: 100%;
     padding: 1.4rem 9rem;
-}
+  }
 
-.footer .sub-nav{
+  .footer .sub-nav{
     width: 20rem;
     display: flex;
     justify-content: space-around;
     margin-bottom: 1.2rem;
-}
 
-.footer .sub-nav a {
+  }
+
+  .footer .sub-nav a {
     color: #fff;
-}
+    text-decoration: none;
+  }
 
-.footer .imp-logo{
+  .footer .imp-logo{
     height: 2rem;
     left: 0;
     align-self: flex-start;
     margin-bottom: 1.5rem;
-}
+  }
 
-.footer .company-info-detail {
+  .footer .company-info-detail {
     width: 38rem;
     align-self: flex-start;
     margin-bottom: 1.6rem;
-}
+  }
 
-.footer .details {
+  .footer .details {
     display: flex;
     flex-direction: row;
     align-self: flex-start;
     gap: .4rem;
     margin-bottom: 1rem;
-}
+  }
 
-.footer .detail-caption {
+  .footer .detail-caption {
     width: 28rem;
-}
+    margin-left: 2rem;
+  }
 
-.footer .info {
+  .footer .info {
     display: flex;
     align-items: center;
     flex-direction: row;
     align-self: flex-start;
     gap: .4rem;
-}
+  }
 
-.footer .logo-list{
+  .footer .info p {
+    text-align: start;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .footer .logo-list{
     margin-top: 1.2rem;
     margin-bottom: 1rem;
     align-self: flex-start;
-}
+  }
 
-.footer .logo-list a {
+  .footer .logo-list a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -357,7 +366,8 @@ body::-webkit-scrollbar {
     border-radius: 100rem;
     background-color: #fff;
     color: black;
-}
+  }
+
 
 @media (max-width: 1010px) {
     html {
