@@ -20,7 +20,7 @@
             <div class="pagination">
                 <a href="#" class="home">Home</a>
                 <a href="#">About Us</a>
-                <a href="#">Portofolio</a>
+                <a href="/portofolio">Portofolio</a>
             </div>
             <a href="#" class="contact-us">Contact Us <img src="assets/arrowup.png" alt="" class="arrow-up" /></a>
         </nav>
@@ -322,7 +322,7 @@
                             <div class="testimonial">
                                 <img src="{{ asset('img/telkom_img.webp') }}" class="logo-img" />
                                 <div class="stars-container">
-                                    <img src="assets/star-fill.svg" alt="Star" class="star-icon" />
+                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
                                 </div>
                                 <p class="rating">8/10</p>
                                 <p>
@@ -339,7 +339,7 @@
                             <div class="testimonial">
                                 <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
                                 <div class="stars-container">
-                                    <img src="assets/star-fill.svg" alt="Star" class="star-icon" />
+                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
                                 </div>
                                 <p class="rating">9/10</p>
                                 <p>
@@ -358,7 +358,7 @@
                             <div class="testimonial">
                                 <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
                                 <div class="stars-container">
-                                    <img src="assets/star-fill.svg" alt="Star" class="star-icon" />
+                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
                                 </div>
                                 <p class="rating">8.9/10</p>
                                 <p>“Mantap, Elegan, Good Looking.”</p>
@@ -381,7 +381,7 @@
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
                                     Accordion Item #1
-                                    <img src="{{ asset('assets/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon" class="accordion-icon" />
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
@@ -539,7 +539,7 @@
 
         <div class="logo-list" style="display: flex; gap: 16px;">
             <!-- Facebook -->
-            <a href="https://www.facebook.com/impstudio.id" target="_blank">
+            <a href="https://www.facebook.com/impstudio.id" target="_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-facebook" viewBox="0 0 16 16">
                     <path
@@ -547,7 +547,7 @@
                 </svg>
             </a>
             <!-- Instagram -->
-            <a href="https://www.instagram.com/impstudio.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+            <a href="https://www.instagram.com/impstudio.id?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-instagram" viewBox="0 0 16 16">
                     <path
@@ -555,7 +555,7 @@
                 </svg>
             </a>
             <!-- YouTube -->
-            <a href="https://www.youtube.com/@IMPStudioID" target="_blank">
+            <a href="https://www.youtube.com/@IMPStudioID" target="_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube"
                     viewBox="0 0 16 16">
                     <path
@@ -563,7 +563,7 @@
                 </svg>
             </a>
             <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/company/impstudio/" target="_blank">
+            <a href="https://www.linkedin.com/company/impstudio/" target="_parent">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-linkedin" viewBox="0 0 16 16">
                     <path
