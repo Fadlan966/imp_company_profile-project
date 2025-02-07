@@ -61,7 +61,7 @@
             <img src="{{ asset('img/madrasah-reform-img.webp') }}" alt="madrasah" />
             <img src="{{ asset('img/mpm_img.webp') }}" alt="npm" />
             <img src="{{ asset('img/pln_img.webp') }}" alt="pln" />
-            <img src="{{ asset('img/telkom_img.webp') }}" alt="telkom" />
+            <img src="{{ asset('img/telkom.png') }}" alt="telkom" />
             <img src="{{ asset('img/travel_clinic_img.webp') }}" alt="travel" />
             <img src="{{ asset('img/ybm_pln_img.webp') }}" alt="ybm" />
         </div>
@@ -75,7 +75,7 @@
             <img src="{{ asset('img/madrasah-reform-img.webp') }}" alt="madrasah" />
             <img src="{{ asset('img/mpm_img.webp') }}" alt="npm" />
             <img src="{{ asset('img/pln_img.webp') }}" alt="pln" />
-            <img src="{{ asset('img/telkom_img.webp') }}" alt="telkom" />
+            <img src="{{ asset('img/telkom.png') }}" alt="telkom" />
             <img src="{{ asset('img/travel_clinic_img.webp') }}" alt="travel" />
             <img src="{{ asset('img/ybm_pln_img.webp') }}" alt="ybm" />
         </div>
@@ -320,7 +320,7 @@
                     <div class="row justify-content-center gy-4 align-items-stretch">
                         <div class="col-md-4 d-flex">
                             <div class="testimonial">
-                                <img src="{{ asset('img/telkom_img.webp') }}" class="logo-img" />
+                                <img src="{{ asset('img/telkom.png') }}" class="logo-img" />
                                 <div class="stars-container">
                                     <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
                                 </div>
