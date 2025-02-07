@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->string('name');
             $table->boolean('is_show');
             $table->timestamps();

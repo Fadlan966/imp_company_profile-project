@@ -12,12 +12,15 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Filters\SelectFilter;
 
 class WorkResource extends Resource
 {
     protected static ?string $model = Work::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-computer-desktop';
+
+    protected static ?string $navigationGroup = 'Portofolio';
 
     public static function form(Form $form): Form
     {
@@ -32,6 +35,12 @@ class WorkResource extends Resource
                         ->imageEditorAspectRatios([
                             '1:1',
                         ]),
+                    Forms\Components\Select::make('service_id')
+                        ->relationship(name: 'service', titleAttribute: 'title')
+                        ->searchable(['title'])->preload(),
+                    Forms\Components\Select::make('project_theme_id')
+                        ->relationship(name: 'project_theme', titleAttribute: 'name')
+                        ->searchable(['name'])->preload(),
                     Forms\Components\TextArea::make('title')
                         ->required()
                         ->rows(3)
@@ -45,10 +54,17 @@ class WorkResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')->searchable()->wrap(),
+                Tables\Columns\TextColumn::make('service.title'),
+                Tables\Columns\TextColumn::make('project_theme.name'),
                 Tables\Columns\ImageColumn::make('image'),
             ])
             ->filters([
-                //
+                SelectFilter::make('service')
+                    ->relationship('service', 'title')
+                    ->multiple()->searchable()->preload(),
+                SelectFilter::make('project_theme')
+                    ->relationship('project_theme', 'name')
+                    ->multiple()->searchable()->preload(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

@@ -17,12 +17,15 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Actions\CreateAction;
 use Filament\Notifications\Notification;
 use Filament\Tables\Actions\ActionGroup;
+use Filament\Tables\Filters\SelectFilter;
 
 class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-archive-box';
+
+    protected static ?string $navigationGroup = 'Portofolio';
 
     public static function form(Form $form): Form
     {
@@ -40,6 +43,9 @@ class ProductResource extends Resource
                     Forms\Components\TextInput::make('name')
                         ->required()
                         ->maxLength(50),
+                    Forms\Components\Select::make('project_theme_id')
+                        ->relationship(name: 'project_theme', titleAttribute: 'name')
+                        ->searchable(['name'])->preload(),
                     Forms\Components\TextArea::make('caption')
                         ->required()
                         ->rows(5)
@@ -55,11 +61,14 @@ class ProductResource extends Resource
         ->columns([
             Tables\Columns\TextColumn::make('name')->searchable(),
             Tables\Columns\ImageColumn::make('image'),
+            Tables\Columns\TextColumn::make('project_theme.name'),
             Tables\Columns\TextColumn::make('caption')->limit(200)->wrap(),
             Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
         ])
         ->filters([
-        //
+            SelectFilter::make('project_theme')
+                ->relationship('project_theme', 'name')
+                ->multiple()->searchable()->preload(),
         ])
         ->actions([
             ActionGroup::make([

@@ -17,6 +17,7 @@ class MemberSeeder extends Seeder
         DB::table('members')->insert([
             [
                 'name' => 'John Doe',
+                'image' => 'karismatik',
                 'is_show' => true,
                 'division_id' => 1,
                 'created_at' => now(),
@@ -24,6 +25,7 @@ class MemberSeeder extends Seeder
             ],
             [
                 'name' => 'Satoshi Nakamoto',
+                'image' => 'karismatik',
                 'is_show' => false,
                 'division_id' => 1,
                 'created_at' => now(),
@@ -31,6 +33,7 @@ class MemberSeeder extends Seeder
             ],
             [
                 'name' => 'Vitalik Sinaga',
+                'image' => 'karismatik',
                 'is_show' => true,
                 'division_id' => 1,
                 'created_at' => now(),

@@ -17,7 +17,9 @@ class ProjectThemeResource extends Resource
 {
     protected static ?string $model = ProjectTheme::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-adjustments-horizontal';
+
+    protected static ?string $navigationGroup = 'Contact Us';
 
     public static function form(Form $form): Form
     {

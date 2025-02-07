@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('image');
             $table->timestamps();
+            $table->unsignedBigInteger('service_id');
+            $table->unsignedBigInteger('project_theme_id');
+            
+            $table->foreign('service_id')->references('id')->on('services');
+            $table->foreign('project_theme_id')->references('id')->on('project_themes');
         });
     }
 

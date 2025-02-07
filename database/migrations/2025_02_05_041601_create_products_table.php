@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('image');
             $table->longText('caption');
             $table->timestamps();
+            $table->unsignedBigInteger('project_theme_id');
+
+            $table->foreign('project_theme_id')->references('id')->on('project_themes');
         });
     }
 

@@ -19,18 +19,24 @@ class WorkSeeder extends Seeder
                 'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata rudal 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'service_id' => 1,
+                'project_theme_id' => 1,
             ],
             [
                 'image' => 'images/image2.jpg',
                 'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata pisang 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'service_id' => 1,
+                'project_theme_id' => 1,
             ],
             [
                 'image' => 'images/image3.jpg',
                 'title' => 'Pengembangan aplikasi perangkat lunak dengan senjata terong 5kg',
                 'created_at' => now(),
                 'updated_at' => now(),
+                'service_id' => 1,
+                'project_theme_id' => 1,
             ],
         ]);
     }

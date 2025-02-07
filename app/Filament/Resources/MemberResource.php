@@ -13,12 +13,14 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Filters\SelectFilter;
-
+use Filament\Navigation\NavigationGroup;
+ 
 class MemberResource extends Resource
 {
     protected static ?string $model = Member::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationGroup = 'About Us';
 
     public static function form(Form $form): Form
     {
@@ -29,6 +31,13 @@ class MemberResource extends Resource
                     Forms\Components\TextInput::make('name')
                         ->required()
                         ->maxLength(200),
+                    Forms\Components\FileUpload::make('image')
+                        ->required()
+                        ->image()
+                        ->imageEditor()
+                        ->imageEditorAspectRatios([
+                            '1:1',
+                        ]),
                     Forms\Components\Select::make('division_id')
                         ->relationship(name: 'division', titleAttribute: 'name')
                         ->searchable(['name'])->preload(),
@@ -42,6 +51,7 @@ class MemberResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('division.name'),
                 Tables\Columns\IconColumn::make('is_show')->boolean(),
                 Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
