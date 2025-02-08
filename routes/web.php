@@ -13,21 +13,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// user
 Route::get('/', function () {
     return view('homepage');
 });
 Route::get('/portofolio', function () {
-    return view('portofolio');
+    return view('User.portofolio');
 });
 Route::get('/contact-us', function () {
-    return view('contact_us');
+    return view('User.contact_us');
 });
 
 Route::get('/homepage', function () {
-    return view('homepage');
+    return view('User.homepage');
 });
 
 Route::get('/about-us', function () {
-    return view('about-us');
+    return view('User.about-us');
 });
 
+// admin
+
+Route::get('/portofolio-admin', function () {
+    return view('Admin.portofolio');
+});
+Route::get('/contact-us-admin', function () {
+    return view('Admin.contact_us');
+});
+
+Route::get('/homepage-admin', function () {
+    return view('Admin.homepage');
+});
+
+Route::get('/about-us-admin', function () {
+    return view('Admin.about-us');
+});
