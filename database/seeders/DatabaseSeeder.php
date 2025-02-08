@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             WorkSeeder::class,
             DivisionSeeder::class,
             MemberSeeder::class,
+            AdminSeeder::class,
         ]);
     }
 }
