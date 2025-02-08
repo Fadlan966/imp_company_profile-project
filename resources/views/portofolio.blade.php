@@ -7,13 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>Company Profile IMP</title>
+    <link rel="icon" href="{{ asset('impvicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/css/portofolio.css') }}">
 </head>
 <body>
     <!-- Navbar Start -->
     <div class="nav-section">
         <nav class="navbar">
-            <img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo">
+            <a href="/homepage"><img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo"></a>
             <div class="pagination">
                 <a href="/homepage">Home</a>
                 <a href="/about-us">About Us</a>

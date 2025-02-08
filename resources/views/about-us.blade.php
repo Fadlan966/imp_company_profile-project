@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('impvicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/css/aboutUs.css') }}">
 </head>
 <body>
     <!-- Navbar Start -->
     <div class="section-nav">
       <div class="nav">
-          <img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo">
+          <a href="/homepage"><img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo"></a>
           <div class="pagination">
               <a href="/homepage">Home</a>
               <a href="#" class="aboutUs">About Us</a>
@@ -33,7 +34,7 @@
         <div class="section-content">
             <div class="content-desc">
                 <h3>Informatika Media Pratama</h3>
-                <p>IMP, a technology company established in 2014, specializes in tailored technology solutions for our partner businesses. 
+                <p>IMP, a technology company established in 2014, specializes in tailored technology solutions for our partner businesses.
                 Evolving from a software house, we've grown alongside our clients, focusing on optimization and innovative business solutions.</p>
                 <p>Our core values - Professionalism, Creativity, and Solution-oriented - define our culture, creating a comfortable work environment.
                 Committed to service excellence with 24/7 support, we emphasize continuous improvement across our team, delivering relevant and up-to-date solutions.</p>
@@ -44,7 +45,7 @@
         </div>
     </div>
     <!-- Who are we End -->
-     
+
     <!-- New Scroll -->
     <div class="container">
     <!-- Vision & Mission Start -->
@@ -92,7 +93,7 @@
               <span class="team-badge">Best Team</span>
               <h2>Our Team</h2>
               <p>Empowering success with a team of professionals committed to excellence</p>
-              
+
               <nav class="team-nav">
                 <a href="#">C Level</a>
                 <a href="#" class="active">UI/UX Designer</a>
@@ -100,7 +101,7 @@
                 <a href="#">QA</a>
                 <a href="#">Software Engineer</a>
               </nav>
-            </div>          
+            </div>
             <div class="team-grid">
               <div class="team-member">
                 <img src="{{asset('/img/AI-Enhanced Professional Portraits for a Powerful LinkedIn Presence (1) 1.png')}}" alt="Team member portrait">
@@ -272,7 +273,7 @@
                 <img src="{{ asset('img/chevron-right.svg') }}" alt="" class="arrow-right" />
               </a>
             </div>
-          </div>       
+          </div>
     <!-- Sub Footer END -->
   <div class="footer">
       <div class="sub-nav">

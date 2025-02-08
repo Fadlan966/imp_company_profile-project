@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Company Profile IMP</title>
+    <link rel="icon" href="{{ asset('impvicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/css/homepage.css') }}" />
 </head>
 
@@ -16,7 +17,7 @@
     <!-- Navbar Start -->
     <div class="nav-section">
         <nav class="navbar">
-            <img src="{{ asset('/img/imp.png') }}" alt="IMP Logo" />
+            <a href="/homepage"><img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo"></a>
             <div class="pagination">
                 <a href="#" class="home">Home</a>
                 <a href="about-us">About Us</a>
