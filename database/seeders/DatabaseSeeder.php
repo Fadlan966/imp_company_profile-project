@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             DivisionSeeder::class,
             MemberSeeder::class,
             AdminSeeder::class,
+            MailSeeder::class,
         ]);
     }
 }

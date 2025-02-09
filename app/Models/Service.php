@@ -14,4 +14,9 @@ class Service extends Model
     {
         return $this->hasMany(Work::class);
     }
+
+    public function mails(): HasMany
+    {
+        return $this->hasMany(Mail::class);
+    }
 }
