@@ -19,4 +19,9 @@ class Mail extends Model
     {
         return $this->belongsTo(ProjectTheme::class);
     }
+
+    public function admin(): BelongsTo
+    {
+        return $this->belongsTo(Admin::class);
+    }
 }

@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    public function mails(): HasMany
+    {
+        return $this->hasMany(Mail::class);
+    }
 
     /**
      * The attributes that are mass assignable.

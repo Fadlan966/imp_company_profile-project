@@ -19,6 +19,7 @@ class MailSeeder extends Seeder
                 'email' => 'masbro@gmail.com',
                 'company_name' => 'imepe studio',
                 'project_details' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum velit qui esse. Officia sed libero hic nesciunt quod. Culpa, totam?',
+                'replied' => 0,
                 'service_id' => 1,
                 'project_theme_id' => 1,
                 'created_at' => now(),

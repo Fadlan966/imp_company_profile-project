@@ -17,12 +17,15 @@ return new class extends Migration
             $table->string('email');
             $table->string('company_name');
             $table->longtext('project_details');
+            $table->boolean('replied');
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('project_theme_id');
+            $table->unsignedBigInteger('admin_id')->nullable();
             $table->timestamps();
 
             $table->foreign('service_id')->references('id')->on('services');
             $table->foreign('project_theme_id')->references('id')->on('project_themes');
+            $table->foreign('admin_id')->references('id')->on('admins');
         });
     }
 

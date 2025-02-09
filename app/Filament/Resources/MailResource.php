@@ -19,7 +19,7 @@ class MailResource extends Resource
 {
     protected static ?string $model = Mail::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-envelope';
 
     protected static ?string $navigationGroup = 'Internal';
 
@@ -30,11 +30,12 @@ class MailResource extends Resource
                 Forms\Components\Card::make()
                 ->schema([
                     Forms\Components\Select::make('service_id')
-                        ->relationship(name: 'service', titleAttribute: 'title')
-                        ->searchable(['title'])->preload(),
+                        ->relationship(name: 'service', titleAttribute: 'title'),
                     Forms\Components\Select::make('project_theme_id')
-                        ->relationship(name: 'project_theme', titleAttribute: 'name')
-                        ->searchable(['name'])->preload(),
+                        ->relationship(name: 'project_theme', titleAttribute: 'name'),
+                    Forms\Components\Select::make('admin_id')
+                        ->relationship(name: 'admin', titleAttribute: 'name'),
+                    Forms\Components\Checkbox::make('replied'),
                     Forms\Components\TextInput::make('name'),
                     Forms\Components\TextInput::make('email'),
                     Forms\Components\TextInput::make('company_name'),
@@ -54,6 +55,7 @@ class MailResource extends Resource
                 Tables\Columns\TextColumn::make('company_name')->searchable(),
                 Tables\Columns\TextColumn::make('service.title'),
                 Tables\Columns\TextColumn::make('project_theme.name'),
+                Tables\Columns\IconColumn::make('replied')->boolean(),
                 Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
             ])
             ->filters([
@@ -62,6 +64,9 @@ class MailResource extends Resource
                     ->multiple()->searchable()->preload(),
                 SelectFilter::make('project_theme')
                     ->relationship('project_theme', 'name')
+                    ->multiple()->searchable()->preload(),
+                SelectFilter::make('admin')
+                    ->relationship('admin', 'name')
                     ->multiple()->searchable()->preload(),
             ])
             ->actions([

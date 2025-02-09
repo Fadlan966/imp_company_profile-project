@@ -48,3 +48,9 @@ Route::get('/homepage-admin', function () {
 Route::get('/about-us-admin', function () {
     return view('Admin.about-us');
 });
+
+
+Route::get('/open-email', function (\Illuminate\Http\Request $request) {
+    $url = $request->query('url');
+    return "<script>window.open(decodeURIComponent('$url'), '_blank'); window.close();</script>";
+})->name('open-email');
