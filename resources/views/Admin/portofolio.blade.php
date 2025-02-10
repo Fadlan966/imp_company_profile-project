@@ -31,15 +31,13 @@
         <h1>Our Work in Action</h1>
         <p>We're here to bring your vision to life with innovative solutions and expert guidance.</p>
         <div class="container">
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
+            @forelse ($works as $work)
+                <div class="image">
+                    <img src="{{ asset("/storage/$work->image") }}" alt="{{ $work->title }}">
+                </div>
+            @empty
+                <h1>Tidak ada informasi</h1>
+            @endforelse
         </div>
         <div class="pagination">
             <a href="#">1</a>
@@ -55,19 +53,23 @@
         <h1>Our Work in Action</h1>
         <p>Take a closer look at our products, where quality meets functionality. We’re here to provide solutions that fit seamlessly into your world.</p>
 
-        <div class="container">
-            <div class="product">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
+        @forelse ($products as $product)
+            <div class="container">
+                <div class="product">
+                    <div class="wrapper">
+                        <img src="{{ asset("/storage/$product->image") }}" alt="">
+                    </div>
+                    <div class="details">
+                        <h2>{{ $product->name }}</h2>
+                        <p>{{ $product->caption }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        @empty
+            <h1>Tidak ada informasi</h1>
+        @endforelse
 
-        <div class="container filled">
+        {{-- <div class="container filled">
             <div class="product-reverse">
                 <div class="wrapper">
                     <img src="{{ asset('/img/masbro.png') }}" alt="">
@@ -101,7 +103,7 @@
                     <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
     <!-- Product End -->

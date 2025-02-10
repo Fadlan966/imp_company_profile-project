@@ -51,15 +51,21 @@
                 <div class="service">
                     <label for="">Service</label>
                     <select name="" id="">
-                        <option value="btc">BTC</option>
-                        <option value="eth">ETH</option>
+                        @forelse ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->title }}</option>
+                        @empty
+                            <option value="0">Tidak diketahui</option>
+                        @endforelse
                     </select>
                 </div>
                 <div class="project-theme">
                     <label for="">Project Theme</label>
                     <select name="" id="">
-                        <option value="btc">BTC</option>
-                        <option value="eth">ETH</option>
+                        @forelse ($project_themes as $project_theme)
+                            <option value="{{ $project_theme->id }}">{{ $project_theme->name }}</option>
+                        @empty
+                            <option value="0">Tidak diketahui</option>
+                        @endforelse
                     </select>
                 </div>
                 <div class="project-details">
@@ -97,28 +103,31 @@
         <div class="faq-dec">Need To Know</div>
         <h5>Frequently Asked Questions</h5>
         <div class="faq-list">
-            <div class="faq">
+            {{-- <div class="faq">
                 <div class="question">
                     <p>Mengapa Bebek kakiknya dua?</p>
                     <p>v</p>
                 </div>
-            </div>
-            <div class="faq active">
+            </div> --}}
+            @forelse ($faqs as $faq)
+                <div class="faq active">
+                    <div class="question">
+                        <p>{{ $faq->question }}</p>
+                        <p>v</p>
+                    </div>
+                    <div class="answer">
+                        {{ $faq->answer }}
+                    </div>
+                </div>
+            @empty
+                <h1>Tidak ada informasi</h1>
+            @endforelse
+            {{-- <div class="faq">
                 <div class="question">
                     <p>Mengapa Bebek kakiknya dua?</p>
                     <p>v</p>
                 </div>
-                <div class="answer">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, deserunt totam! Error laudantium
-                    quasi, impedit cupiditate quo ipsum repellat quisquam.
-                </div>
-            </div>
-            <div class="faq">
-                <div class="question">
-                    <p>Mengapa Bebek kakiknya dua?</p>
-                    <p>v</p>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- FAQ End -->

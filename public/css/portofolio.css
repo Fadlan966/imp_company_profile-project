@@ -139,6 +139,10 @@ body::-webkit-scrollbar {
     color: #fff;
 }
 
+.portofolio-section .container img{
+    max-width: 100%;
+}
+
 
 /* Product */
 .product-section{

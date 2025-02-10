@@ -95,44 +95,26 @@
               <p>Empowering success with a team of professionals committed to excellence</p>
 
               <nav class="team-nav">
-                <a href="#">C Level</a>
-                <a href="#" class="active">UI/UX Designer</a>
-                <a href="#">DevOps Engineer</a>
-                <a href="#">QA</a>
-                <a href="#">Software Engineer</a>
+                @forelse ($divisions as $division)
+                  <a href="#">{{ $division->name }}</a>
+                @empty
+                    <h1>Tidak tersedia informasi</h1>
+                @endforelse
               </nav>
             </div>
             <div class="team-grid">
-              <div class="team-member">
-                <img src="{{asset('/img/AI-Enhanced Professional Portraits for a Powerful LinkedIn Presence (1) 1.png')}}" alt="Team member portrait">
-                <div class="team-member-info">
-                  <h3>John Doe</h3>
-                  <p>UI/UX Designer</p>
-                </div>
-              </div>
-              <div class="team-member">
-                <img src="{{asset('/img/AI-Enhanced Professional Portraits for a Powerful LinkedIn Presence (2) 1.png')}}" alt="Team member portrait">
-                <div class="team-member-info">
-                  <h3>John Doe</h3>
-                  <p>UI/UX Designer</p>
-                </div>
-              </div>
-              <div class="team-member">
-                <img src="{{asset('img/AI-Enhanced Professional Portraits for a Powerful LinkedIn Presence (4) 1.png')}}" alt="Team member portrait">
-                <div class="team-member-info">
-                  <h3>John Doe</h3>
-                  <p>UI/UX Designer</p>
-                </div>
-              </div>
-              <div class="team-member">
-                <img src="{{asset('/img/AI-Enhanced Professional Portraits for a Powerful LinkedIn Presence 1.png')}}" alt="Team member portrait">
-                <div class="team-member-info">
-                  <h3>John Doe</h3>
-                  <p>UI/UX Designer</p>
-                </div>
-              </div>
-            </div>
-            <div class="team-grid">
+              @forelse ($members as $member)
+                <div class="team-member">
+                  <img src="{{ asset("/storage/$member->image") }}" alt="Team member portrait">
+                  <div class="team-member-info">
+                    <h3>{{ $member->name }}</h3>
+                    <p>{{ $member->division_id }}</p>
+                  </div>
+                </div>    
+              @empty
+                  
+              @endforelse
+            {{-- <div class="team-grid">
               <div class="team-member">
                 <img src="{{asset ('img/4.png')}}" alt="Team member portrait">
                 <div class="team-member-info">
@@ -161,7 +143,7 @@
                   <p>UI/UX Designer</p>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </section>
          <!-- Best Team END -->
     </div>
@@ -173,7 +155,7 @@
       </div>
       <div class="timeline">
         <div class="timeline-row">
-          <div class="timeline-item">
+          {{-- <div class="timeline-item">
             <div class="timeline-content">
               <div class="timeline-year">2020</div>
               <img
@@ -183,10 +165,11 @@
                 alt=""
               />
             </div>
-          </div>
+          </div> --}}
+          @forelse ($milestones as $milestone)
           <div class="timeline-card">
             <div class="timeline-card-header">
-              <div class="timeline-card-year">2021</div>
+              <div class="timeline-card-year">{{ $milestone->year }}</div>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
@@ -195,12 +178,14 @@
               />
             </div>
             <div class="timeline-card-description">
-              We successfully built trust with partners and clients through consistent
-              and quality services.
+              {{ $milestone->caption }}
             </div>
           </div>
+          @empty
+              <h1>Tidak tersedia infomrasi</h1>
+          @endforelse
         </div>
-        <div class="timeline-row">
+        {{-- <div class="timeline-row">
           <div class="timeline-card">
             <div class="timeline-card-header">
               <div class="timeline-card-year">2022</div>
@@ -251,7 +236,7 @@
               />
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
      </section>
     <!-- Milestone END -->
