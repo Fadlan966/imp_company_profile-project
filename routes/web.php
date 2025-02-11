@@ -9,6 +9,7 @@ use App\Models\Milestone;
 use App\Models\Work;
 use App\Models\Product;
 use App\Models\ProjectTheme;
+use App\Http\Controllers\formContactUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,3 +73,5 @@ Route::get('/about-us-admin', function () {
         'milestones' => Milestone::all(),
     ]);
 });
+
+Route::post('/submit-form', [formContactUsController::class, 'store'])->name('contact_us.store');

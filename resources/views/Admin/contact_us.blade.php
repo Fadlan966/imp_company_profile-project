@@ -10,6 +10,8 @@
     <title>Company Profile IMP</title>
     <link rel="icon" href="{{ asset('impvicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/css/contact_us.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -34,48 +36,95 @@
         <h1>We're Here To Help</h1>
         <p>Our team is ready to support you with expert advice & solutions.</p>
         <img src="{{ asset('/img/deal-img') }}.png" alt="">
-        <form action="" method="post">
+        {{-- <form id='contact-form' action="{{ route('contact_us.store')}}" method="POST">
+            @csrf
             <div class="form-contact-us">
                 <div class="name">
-                    <label for="">Name</label>
-                    <input type="text" name="" id="" placeholder="John Doe">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required @required(true)>
                 </div>
                 <div class="email">
-                    <label for="">Email</label>
-                    <input type="email" name="" id="" placeholder="example@gmail.com">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Email" required @required(true)>
                 </div>
                 <div class="company-name">
-                    <label for="">Company Name</label>
-                    <input type="text" name="" id="" placeholder="IMP Studio">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" class="@error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" placeholder="Ex. PT. IMP Studio" required @required(true)>
                 </div>
                 <div class="service">
-                    <label for="">Service</label>
-                    <select name="" id="">
+                    <label for="service">Service</label>
+                    <select name="service" id="service">
                         @forelse ($services as $service)
                             <option value="{{ $service->id }}">{{ $service->title }}</option>
                         @empty
-                            <option value="0">Tidak diketahui</option>
+                            <option value="">Belum ada informasi</option>
                         @endforelse
                     </select>
                 </div>
                 <div class="project-theme">
-                    <label for="">Project Theme</label>
-                    <select name="" id="">
+                    <label for="project_theme">Project Theme</label>
+                    <select name="project_theme" id="project_theme">
                         @forelse ($project_themes as $project_theme)
                             <option value="{{ $project_theme->id }}">{{ $project_theme->name }}</option>
                         @empty
-                            <option value="0">Tidak diketahui</option>
+                            <option value="0">Belum ada informasi</option>
                         @endforelse
                     </select>
                 </div>
                 <div class="project-details">
-                    <label for="">Project Details</label>
-                    <input type="text" name="" id="" placeholder="Tell Us More About Your Project">
+                    <label for="project_details">Project Details</label>
+                    {{-- <textarea id="project_details" class="@error('project_details') is-invalid @enderror" name="project_details" value="{{ old('project_details') }}" required @required(true)></textarea> --}}
+                    {{-- <input type="text" id="project_details" class="@error('project_details') is-invalid @enderror" name="project_details" value="{{ old('project_details') }}" required @required(true)></input> --}}
+                    {{-- <input type="text" aria-rowcount="12" name="" id="" placeholder="Tell Us More About Your Project">
                 </div>
                 <div class="last-row">
-                    <button href="#" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}"
+                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}"
                             alt="" class="arrow-up"></button>
                     <p>We Will contact you within 24 business hours.</p>
+                </div>
+            </div>
+        </form> --}}
+        <form id="contact-form" action="{{ route('contact_us.store') }}" method="POST">
+            @csrf
+            <div class="form-contact-us">
+                <div class="name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" value="{{ old('email') }}" placeholder="Masukkan Email" required>
+                </div>
+                <div class="company-name">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" value="{{ old('company_name') }}" placeholder="Ex. PT. IMP Studio" required>
+                </div>
+                <div class="service">
+                    <label for="service">Service</label>
+                    <select name="service" id="service">
+                        @forelse ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->title }}</option>
+                        @empty
+                            <option value="">Belum ada informasi</option>
+                        @endforelse
+                    </select>
+                </div>
+                <div class="project-theme">
+                    <label for="project_theme">Project Theme</label>
+                    <select name="project_theme" id="project_theme">
+                        @forelse ($project_themes as $project_theme)
+                            <option value="{{ $project_theme->id }}">{{ $project_theme->name }}</option>
+                        @empty
+                            <option value="0">Belum ada informasi</option>
+                        @endforelse
+                    </select>
+                </div>
+                <div class="project-details">
+                    <label for="project_details">Project Details</label>
+                    <input type="text" id="project_details" name="project_details" value="{{ old('project_details') }}" required>
+                </div>
+                <div class="last-row">
+                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></button>
                 </div>
             </div>
         </form>
@@ -253,6 +302,47 @@
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        let formData = new FormData(this); // Get form data
+
+        fetch(this.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Data Berhasil Disimpan!",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then(() => {
+                    document.getElementById("contact-form").reset(); // Reset form after success
+                });
+            } else {
+                Swal.fire({
+                    title: "Something Wrong!",
+                    text: "Please check your inputs.",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: "Something Wrong!",
+                text: "An unexpected error occurred.",
+                icon: "error",
+                confirmButtonText: "OK"
+            });
+        });
+    });
     document.querySelectorAll(".faq").forEach(card => {
         card.addEventListener("click", function () {
             event.preventDefault();
