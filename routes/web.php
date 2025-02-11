@@ -43,7 +43,7 @@ Route::get('/about-us', function () {
 
 Route::get('/portofolio-admin', function () {
     return view('Admin.portofolio', [
-        'works' => Work::all(),
+        'works' => Work::paginate(9),
         'products' => Product::all(),
     ]);
 });

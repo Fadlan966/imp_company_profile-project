@@ -110,10 +110,15 @@
                 </div>
             </div> --}}
             @forelse ($faqs as $faq)
-                <div class="faq active">
+                <div class="faq">
                     <div class="question">
                         <p>{{ $faq->question }}</p>
-                        <p>v</p>
+                        <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
+                            class="open-close-icon"
+                            alt=""
+                        />
                     </div>
                     <div class="answer">
                         {{ $faq->answer }}
@@ -246,5 +251,24 @@
         </p>
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".faq").forEach(card => {
+        card.addEventListener("click", function () {
+            event.preventDefault();
+            let img = this.querySelector(".open-close-icon");
 
+            // Toggle the "active" class
+            this.classList.toggle("active");
+
+            // Change image source based on active state
+            if (this.classList.contains("active")) {
+                img.src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Change to opened image
+            } else {
+                img.src = "https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Revert back
+            }
+            });
+        });
+    });
+</script>
 </html>

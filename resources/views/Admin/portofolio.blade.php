@@ -40,10 +40,19 @@
             @endforelse
         </div>
         <div class="pagination">
+            @for ($i = 1; $i <= $works->lastPage(); $i++)
+                @if ($i == $works->currentPage())
+                    <span class="active">{{ $i }}</span>
+                @else
+                    <a href="{{ $works->url($i) }}">{{ $i }}</a>
+                @endif
+            @endfor
+        </div>
+        {{-- <div class="pagination">
             <a href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
-        </div>
+        </div> --}}
     </div>
     <!-- Portofolio End -->
 
@@ -54,10 +63,23 @@
         <p>Take a closer look at our products, where quality meets functionality. We’re here to provide solutions that fit seamlessly into your world.</p>
 
         @forelse ($products as $product)
-            <div class="container">
-                <div class="product">
+            @if ($loop->even)
+                <div class="container">
+                    <div class="product">
+                        <div class="wrapper">
+                            <img src="{{ asset("/storage/$product->image") }}" alt="{{ $product->name }}">
+                        </div>
+                        <div class="details">
+                            <h2>{{ $product->name }}</h2>
+                            <p>{{ $product->caption }}</p>
+                        </div>
+                    </div>
+                </div>
+            @elseif ($loop->odd)
+            <div class="container filled">
+                <div class="product-reverse">
                     <div class="wrapper">
-                        <img src="{{ asset("/storage/$product->image") }}" alt="">
+                        <img src="{{ asset("/storage/$product->image") }}" alt="{{ $product->name }}">
                     </div>
                     <div class="details">
                         <h2>{{ $product->name }}</h2>
@@ -65,46 +87,10 @@
                     </div>
                 </div>
             </div>
+            @endif
         @empty
             <h1>Tidak ada informasi</h1>
         @endforelse
-
-        {{-- <div class="container filled">
-            <div class="product-reverse">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="product">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container filled">
-            <div class="product-reverse">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div> --}}
-
     </div>
     <!-- Product End -->
 

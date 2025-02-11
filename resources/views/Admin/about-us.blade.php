@@ -96,23 +96,38 @@
 
               <nav class="team-nav">
                 @forelse ($divisions as $division)
-                  <a href="#">{{ $division->name }}</a>
+                    <a href="#" 
+                       onclick="divisionShowHide({{ $division->id }})" 
+                       id="division-button-{{ $division->id }}">
+                        {{ $division->name }}
+                    </a>
                 @empty
                     <h1>Tidak tersedia informasi</h1>
                 @endforelse
-              </nav>
+            </nav>
             </div>
             <div class="team-grid">
-              @forelse ($members as $member)
+              {{-- @forelse ($members as $member)
                 <div class="team-member">
                   <img src="{{ asset("/storage/$member->image") }}" alt="Team member portrait">
                   <div class="team-member-info">
                     <h3>{{ $member->name }}</h3>
-                    <p>{{ $member->division_id }}</p>
+                    <p>{{ $member->division()->first()->name }}</p>
                   </div>
                 </div>    
               @empty
-                  
+                <h1>Tidak tersedia informasi</h1>
+              @endforelse --}}
+              @forelse ($members as $member)
+                <div class="team-member" data-division-id="{{ $member->division_id }}">
+                    <img src="{{ asset("/storage/$member->image") }}" alt="Team member portrait">
+                    <div class="team-member-info">
+                        <h3>{{ $member->name }}</h3>
+                        <p>{{ $member->division->name }}</p>
+                    </div>
+                </div>    
+              @empty
+                <h1>Tidak tersedia informasi</h1>
               @endforelse
             {{-- <div class="team-grid">
               <div class="team-member">
@@ -142,8 +157,8 @@
                   <h3>John Doe</h3>
                   <p>UI/UX Designer</p>
                 </div>
-              </div>
-            </div> --}}
+              </div> --}}
+            </div>
           </section>
          <!-- Best Team END -->
     </div>
@@ -167,9 +182,42 @@
             </div>
           </div> --}}
           @forelse ($milestones as $milestone)
-          <div class="timeline-card">
+            {{-- <div class="timeline-card active">
+              <div class="timeline-card-header">
+                <div class="timeline-card-year">{{ $milestone->year }}</div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
+                  class="timeline-icon"
+                  alt=""
+                />
+              </div>
+              <div class="timeline-card-description">
+                {{ $milestone->caption }}
+              </div>
+            </div> --}}
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <div class="timeline-card-year">{{ $milestone->year }}</div>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
+                  class="timeline-icon"
+                  alt=""
+                />
+              </div>
+              <div class="timeline-card-description">
+                {{ $milestone->caption }}
+              </div>
+            </div>
+          @empty
+              <h1>Tidak tersedia informasi</h1>
+          @endforelse
+        </div>
+          {{-- dibuka --}}
+          {{-- <div class="timeline-card active">
             <div class="timeline-card-header">
-              <div class="timeline-card-year">{{ $milestone->year }}</div>
+              <div class="timeline-card-year">2025</div>
               <img
                 loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
@@ -178,41 +226,25 @@
               />
             </div>
             <div class="timeline-card-description">
-              {{ $milestone->caption }}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, fugit.
             </div>
-          </div>
-          @empty
-              <h1>Tidak tersedia infomrasi</h1>
-          @endforelse
-        </div>
-        {{-- <div class="timeline-row">
-          <div class="timeline-card">
+          </div> --}}
+          {{-- Ubah --}}
+          {{-- <div class="timeline-card">
             <div class="timeline-card-header">
-              <div class="timeline-card-year">2022</div>
+              <div class="timeline-card-year">2025</div>
               <img
                 loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/00fa43d3f3100f7e08e340d4ab88bf667d52daa454dcb5bb513a3db9fe62e21b?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
                 class="timeline-icon"
                 alt=""
               />
             </div>
             <div class="timeline-card-description">
-              Our focus this year was to strengthen our portfolio with outstanding
-              projects and tangible achievements.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, fugit.
             </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <div class="timeline-year">2023</div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/dc3d1984fc4237b2172fad9095f553498814f33fe4959ce66cc235f170256d74?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
-                class="timeline-icon"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
+          </div> --}}
+        {{--
         <div class="timeline-row">
           <div class="timeline-item">
             <div class="timeline-content">
@@ -362,6 +394,51 @@
           Copyright © 2014 - 2024 IMP Studio. All rights reserved
       </p>
   </div>
-     <!-- Footer END -->
+  <!-- Footer END -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".timeline-card").forEach(card => {
+        card.addEventListener("click", function () {
+            event.preventDefault();
+            let img = this.querySelector(".timeline-icon");
+
+            // Toggle the "active" class
+            this.classList.toggle("active");
+
+            // Change image source based on active state
+            if (this.classList.contains("active")) {
+                img.src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Change to opened image
+            } else {
+                img.src = "https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Revert back
+            }
+            });
+        });
+    });
+
+    function divisionShowHide(divisionId) {
+      event.preventDefault();
+
+      // Hide all team members
+      document.querySelectorAll(".team-member").forEach(member => {
+          member.style.display = "none";
+      });
+
+      // Show only team members that belong to the selected division
+      document.querySelectorAll(`[data-division-id='${divisionId}']`).forEach(member => {
+          member.style.display = "flex";
+      });
+
+      // Remove active class from all buttons
+      document.querySelectorAll("[id^='division-button-']").forEach(button => {
+          button.classList.remove("active");
+      });
+
+      // Add active class to the selected button
+      let selectedButton = document.getElementById(`division-button-${divisionId}`);
+      if (selectedButton) {
+          selectedButton.classList.add("active");
+      }
+    }
+  </script>
 </body>
 </html>

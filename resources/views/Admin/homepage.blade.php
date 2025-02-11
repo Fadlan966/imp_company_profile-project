@@ -97,26 +97,23 @@
         </p>
 
         <!-- Baris pertama dengan dua card di atas -->
-        <div class="row mb-4">
+        <div class="d-flex flex-wrap justify-content-center mb-3 gap-4">
             @forelse ($services as $service)
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="custom-card">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="d-flex flex-column align-items-start">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
+                <div class="custom-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-column align-items-start">
+                            <div></div>
+                            <div></div>
+                            <div></div>
                         </div>
-                        <h2 class="title text-center">{{ $service->title }}</h2>
-                        <!-- Tambahkan text-start -->
-                        <div class="image-container"><img style="width: 100%" src="{{ asset("/storage/$service->image") }}" alt="{{ $service->title }} image"></div>
                     </div>
-                </div>                
+                    <h2 class="title text-center">{{ $service->title }}</h2>
+                    <!-- Tambahkan text-start -->
+                    <div class="image-container"><img style="width: 100%" src="{{ asset("/storage/$service->image") }}" alt="{{ $service->title }} image"></div>
+                </div>
             @empty
                 <h1>Tidak tersedia informasi</h1>
             @endforelse
-
             {{-- <div class="col-md-6 d-flex justify-content-center">
                 <div class="custom-card">
                     <div class="d-flex justify-content-between align-items-center">
@@ -358,14 +355,14 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
+                                    data-bs-target="#flush-collapse{{ $faq->id }}" aria-expanded="false"
+                                    aria-controls="flush-collapse{{ $faq->id }}">
                                     {{ $faq->question }}
                                     <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
                                         class="accordion-icon" />
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            <div id="flush-collapse{{ $faq->id }}" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     {{ $faq->answer }}

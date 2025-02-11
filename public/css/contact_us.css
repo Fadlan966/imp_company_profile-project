@@ -220,7 +220,10 @@ body::-webkit-scrollbar {
     width: 45rem;
     margin: auto;
 }
+
 .faq-section .faq-list .faq {
+    cursor: pointer;
+    margin: 1rem;
     padding: 1.6rem 1.4rem;
     border-radius: 1rem;
     width: 100%;
@@ -231,10 +234,13 @@ body::-webkit-scrollbar {
     flex-direction: row;
     justify-content: space-between;
 }
+.faq-section .faq-list .faq:not(.active) .answer {
+    display: none;
+}
 .faq-section .faq-list .faq.active{
     background-color: #1E1E1E;
 }
-.faq-section .faq-list .faq .answer {
+.faq-section .faq-list .faq.active .answer {
     margin-top: 1rem;
     font-size: 13px;
 }

@@ -282,7 +282,11 @@ body::-webkit-scrollbar {
 }
   
 .team-member {
-    border-radius: 12px;
+    width: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -292,8 +296,9 @@ body::-webkit-scrollbar {
 }
   
 .team-member img {
-    width: 100%;
-    height: auto;
+    border-radius: 1rem;
+    width: 18rem;
+    height: 22rem;
     object-fit: cover;
 }
   
@@ -358,8 +363,10 @@ body::-webkit-scrollbar {
     justify-content: start;
     flex-wrap: wrap;
   }
-
-  .timeline-item {
+  .timeline-card:hover {
+    cursor: pointer;
+  }
+  .timeline-card:not(.active) {
     align-self: stretch;
     display: flex;
     min-width: 240px;
@@ -376,25 +383,28 @@ body::-webkit-scrollbar {
     padding: 20px 13px;
   }
 
-  .timeline-content {
+  .timeline-card:not(.active) .timeline-card-header {
     display: flex;
     min-width: 240px;
     width: 100%;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     flex-wrap: wrap;
     flex: 1;
     flex-basis: 0%;
   }
 
-  .timeline-year {
+  .timeline-card:not(.active) .timeline-year {
     align-self: stretch;
     flex: 1;
     flex-basis: 0%;
     margin: auto 0;
   }
+  .timeline-card:not(.active) .timeline-card-description {
+    display: none;
+  }
 
-  .timeline-icon {
+  .timeline-card:not(.active) .timeline-icon {
     aspect-ratio: 2;
     object-fit: contain;
     object-position: center;
@@ -403,7 +413,7 @@ body::-webkit-scrollbar {
     margin: auto 0;
   }
 
-  .timeline-card {
+  .timeline-card.active {
     border-radius: 15px;
     background-color: #1e1e1e;
     align-self: stretch;
@@ -417,7 +427,7 @@ body::-webkit-scrollbar {
     padding: 20px 13px;
   }
 
-  .timeline-card-header {
+  .timeline-card.active .timeline-card-header {
     display: flex;
     width: 100%;
     align-items: start;
@@ -431,7 +441,7 @@ body::-webkit-scrollbar {
     flex-wrap: wrap;
   }
 
-  .timeline-card-year {
+  .timeline-card.active .timeline-card-year {
     align-self: stretch;
     text-align: start;
     width: 93px;
@@ -441,7 +451,7 @@ body::-webkit-scrollbar {
     font-size: 24px;
   }
 
-  .timeline-card-description {
+  .timeline-card.active .timeline-card-description {
     margin-top: 20px;
     width: 100%;
     font-size: 18px;
