@@ -20,7 +20,7 @@
             <a href="/homepage"><img src="{{ asset('/img/implogo.png') }}" alt="IMP Logo"></a>
             <div class="pagination">
                 <a href="#" class="home">Home</a>
-                <a href="about-us">About Us</a>
+                <a href="/about-us">About Us</a>
                 <a href="/portofolio">Portofolio</a>
             </div>
             <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}" class="arrow-up"/></a>
@@ -97,8 +97,8 @@
         </p>
 
         <!-- Baris pertama dengan dua card di atas -->
-        <div class="row mb-4">
-            <div class="col-md-6 d-flex justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center mb-3 gap-4">
+            @forelse ($services as $service)
                 <div class="custom-card">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex flex-column align-items-start">
@@ -107,75 +107,16 @@
                             <div></div>
                         </div>
                     </div>
-                    <h2 class="title text-center">Artificial Intelligence</h2>
+                    <h2 class="title text-center">{{ $service->title }}</h2>
                     <!-- Tambahkan text-start -->
-                    <div class="image-container"></div>
+                    <div class="image-container"><img style="width: 100%" src="{{ asset("/storage/$service->image") }}" alt="{{ $service->title }} image"></div>
                 </div>
-            </div>
-
-            <div class="col-md-6 d-flex justify-content-center">
-                <div class="custom-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex flex-column align-items-start">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <h2 class="title text-center">IT Consultant</h2>
-                    <!-- Tambahkan text-start -->
-                    <div class="image-container"></div>
-                </div>
-            </div>
+            @empty
+                <h1>Tidak tersedia informasi</h1>
+            @endforelse
         </div>
 
-        <!-- Baris kedua dengan tiga card berbaris -->
-        <div class="row g-4">
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="custom-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex flex-column align-items-start">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <h2 class="title text-center">System Development</h2>
-                    <!-- Tambahkan text-start -->
-                    <div class="image-container"></div>
-                </div>
-            </div>
-
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="custom-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex flex-column align-items-start">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <h2 class="title text-center">Compliant Govtech</h2>
-                    <!-- Tambahkan text-start -->
-                    <div class="image-container"></div>
-                </div>
-            </div>
-
-            <div class="col-md-4 d-flex justify-content-center">
-                <div class="custom-card">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex flex-column align-items-start">
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                        </div>
-                    </div>
-                    <h2 class="title text-center">Cloud Manage Service</h2>
-                    <!-- Tambahkan text-start -->
-                    <div class="image-container"></div>
-                </div>
-            </div>
-        </div>
+    </div>
         <!-- Our Mission -->
         <div class="our-mission-section">
             <div class="our-mission-box">Our Mission</div>
@@ -376,86 +317,27 @@
                 <h1>Frequently Asked Questions</h1>
                 <div class="faq-componet">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
+                        @forelse ($faqs as $faq)
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    Accordion Item #1
+                                    data-bs-target="#flush-collapse{{ $faq->id }}" aria-expanded="false"
+                                    aria-controls="flush-collapse{{ $faq->id }}">
+                                    {{ $faq->question }}
                                     <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
                                         class="accordion-icon" />
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            <div id="flush-collapse{{ $faq->id }}" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is
-                                    the first item's accordion body.
+                                    {{ $faq->answer }}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    Accordion Item #2
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
-                                        class="accordion-icon" />
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is
-                                    the second item's accordion body. Let's imagine this being
-                                    filled with some actual content.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                    aria-controls="flush-collapseThree">
-                                    Accordion Item #3
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
-                                        class="accordion-icon" />
-                                </button>
-                            </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is
-                                    the third item's accordion body.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
-                                    aria-controls="flush-collapseFour">
-                                    Accordion Item #4
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
-                                        class="accordion-icon" />
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is
-                                    the third item's accordion body.
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            <h1>Tidak tersedia informasi</h1>
+                        @endforelse
                     </div>
                 </div>
             </div>

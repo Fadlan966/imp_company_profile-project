@@ -31,21 +31,28 @@
         <h1>Our Work in Action</h1>
         <p>We're here to bring your vision to life with innovative solutions and expert guidance.</p>
         <div class="container">
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
-            <div class="image"></div>
+            @forelse ($works as $work)
+                <div class="image">
+                    <img src="{{ asset("/storage/$work->image") }}" alt="{{ $work->title }}">
+                </div>
+            @empty
+                <h1>Tidak ada informasi</h1>
+            @endforelse
         </div>
         <div class="pagination">
+            @for ($i = 1; $i <= $works->lastPage(); $i++)
+                @if ($i == $works->currentPage())
+                    <span class="active">{{ $i }}</span>
+                @else
+                    <a href="{{ $works->url($i) }}">{{ $i }}</a>
+                @endif
+            @endfor
+        </div>
+        {{-- <div class="pagination">
             <a href="#">1</a>
             <a href="#">2</a>
             <a href="#">3</a>
-        </div>
+        </div> --}}
     </div>
     <!-- Portofolio End -->
 
@@ -55,54 +62,35 @@
         <h1>Our Work in Action</h1>
         <p>Take a closer look at our products, where quality meets functionality. We’re here to provide solutions that fit seamlessly into your world.</p>
 
-        <div class="container">
-            <div class="product">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
+        @forelse ($products as $product)
+            @if ($loop->even)
+                <div class="container">
+                    <div class="product">
+                        <div class="wrapper">
+                            <img src="{{ asset("/storage/$product->image") }}" alt="{{ $product->name }}">
+                        </div>
+                        <div class="details">
+                            <h2>{{ $product->name }}</h2>
+                            <p>{{ $product->caption }}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container filled">
-            <div class="product-reverse">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="product">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
+            @elseif ($loop->odd)
+            <div class="container filled">
+                <div class="product-reverse">
+                    <div class="wrapper">
+                        <img src="{{ asset("/storage/$product->image") }}" alt="{{ $product->name }}">
+                    </div>
+                    <div class="details">
+                        <h2>{{ $product->name }}</h2>
+                        <p>{{ $product->caption }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="container filled">
-            <div class="product-reverse">
-                <div class="wrapper">
-                    <img src="{{ asset('/img/masbro.png') }}" alt="">
-                </div>
-                <div class="details">
-                    <h2>Smart Chat Bot</h2>
-                    <p>Chatbot merupakan suatu program kecerdasan buatan (AI) yang dapat menyerupai percakapan manusia dalam bentuk pesan, serta merespon pertanyaan pelanggan dengan cepat dan natural</p>
-                </div>
-            </div>
-        </div>
-
+            @endif
+        @empty
+            <h1>Tidak ada informasi</h1>
+        @endforelse
     </div>
     <!-- Product End -->
 

@@ -36,12 +36,12 @@ class formContactUsController extends Controller
         $mail = Mail::create([
             'service_id'        => $request->service,
             'project_theme_id'  => $request->project_theme,
-            'name'           => $request->name,
-            'email'          => $request->email,
-            'company_name'   => $request->company_name,
-            'project_details'=> $request->project_details,
-            'replied'        => false,
-            'created_at'     => now(),
+            'name'              => $request->name,
+            'email'             => $request->email,
+            'company_name'      => $request->company_name,
+            'project_details'   => $request->project_details,
+            'replied'           => false,
+            'created_at'        => now(),
         ]);
 
         //return response

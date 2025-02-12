@@ -25,39 +25,23 @@ use App\Http\Controllers\formContactUsController;
 Route::get('/', function () {
     return view('homepage');
 });
+
 Route::get('/portofolio', function () {
-    return view('User.portofolio');
-});
-Route::get('/contact-us', function () {
-    return view('User.contact_us');
-});
-
-Route::get('/homepage', function () {
-    return view('User.homepage');
-});
-
-Route::get('/about-us', function () {
-    return view('User.about-us');
-});
-
-// admin
-
-Route::get('/portofolio-admin', function () {
-    return view('Admin.portofolio', [
+    return view('portofolio', [
         'works' => Work::paginate(9),
         'products' => Product::all(),
     ]);
 });
-Route::get('/contact-us-admin', function () {
-    return view('Admin.contact_us', [
+Route::get('/contact-us', function () {
+    return view('contact_us', [
         'services' => Service::all(),
         'project_themes' => ProjectTheme::all(),
         'faqs' => FAQ::all(),
     ]);
 });
 
-Route::get('/homepage-admin', function () {
-    return view('Admin.homepage',
+Route::get('/homepage', function () {
+    return view('homepage',
     [
         'services' => Service::all(),
         'faqs' => FAQ::all(),
@@ -65,8 +49,8 @@ Route::get('/homepage-admin', function () {
 );
 });
 
-Route::get('/about-us-admin', function () {
-    return view('Admin.about-us',
+Route::get('/about-us', function () {
+    return view('about-us',
     [
         'divisions' => Division::all(),
         'members' => Member::all(),

@@ -10,6 +10,8 @@
     <title>Company Profile IMP</title>
     <link rel="icon" href="{{ asset('impvicon.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('/css/contact_us.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -34,42 +36,95 @@
         <h1>We're Here To Help</h1>
         <p>Our team is ready to support you with expert advice & solutions.</p>
         <img src="{{ asset('/img/deal-img') }}.png" alt="">
-        <form action="" method="post">
+        {{-- <form id='contact-form' action="{{ route('contact_us.store')}}" method="POST">
+            @csrf
             <div class="form-contact-us">
                 <div class="name">
-                    <label for="">Name</label>
-                    <input type="text" name="" id="" placeholder="John Doe">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required @required(true)>
                 </div>
                 <div class="email">
-                    <label for="">Email</label>
-                    <input type="email" name="" id="" placeholder="example@gmail.com">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" class="@error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Masukkan Email" required @required(true)>
                 </div>
                 <div class="company-name">
-                    <label for="">Company Name</label>
-                    <input type="text" name="" id="" placeholder="IMP Studio">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" class="@error('company_name') is-invalid @enderror" name="company_name" value="{{ old('company_name') }}" placeholder="Ex. PT. IMP Studio" required @required(true)>
                 </div>
                 <div class="service">
-                    <label for="">Service</label>
-                    <select name="" id="">
-                        <option value="btc">BTC</option>
-                        <option value="eth">ETH</option>
+                    <label for="service">Service</label>
+                    <select name="service" id="service">
+                        @forelse ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->title }}</option>
+                        @empty
+                            <option value="">Belum ada informasi</option>
+                        @endforelse
                     </select>
                 </div>
                 <div class="project-theme">
-                    <label for="">Project Theme</label>
-                    <select name="" id="">
-                        <option value="btc">BTC</option>
-                        <option value="eth">ETH</option>
+                    <label for="project_theme">Project Theme</label>
+                    <select name="project_theme" id="project_theme">
+                        @forelse ($project_themes as $project_theme)
+                            <option value="{{ $project_theme->id }}">{{ $project_theme->name }}</option>
+                        @empty
+                            <option value="0">Belum ada informasi</option>
+                        @endforelse
                     </select>
                 </div>
                 <div class="project-details">
-                    <label for="">Project Details</label>
-                    <input type="text" name="" id="" placeholder="Tell Us More About Your Project">
+                    <label for="project_details">Project Details</label>
+                    {{-- <textarea id="project_details" class="@error('project_details') is-invalid @enderror" name="project_details" value="{{ old('project_details') }}" required @required(true)></textarea> --}}
+                    {{-- <input type="text" id="project_details" class="@error('project_details') is-invalid @enderror" name="project_details" value="{{ old('project_details') }}" required @required(true)></input> --}}
+                    {{-- <input type="text" aria-rowcount="12" name="" id="" placeholder="Tell Us More About Your Project">
                 </div>
                 <div class="last-row">
-                    <button href="#" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}"
+                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}"
                             alt="" class="arrow-up"></button>
                     <p>We Will contact you within 24 business hours.</p>
+                </div>
+            </div>
+        </form> --}}
+        <form id="contact-form" action="{{ route('contact_us.store') }}" method="POST">
+            @csrf
+            <div class="form-contact-us">
+                <div class="name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" value="{{ old('email') }}" placeholder="Masukkan Email" required>
+                </div>
+                <div class="company-name">
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" name="company_name" value="{{ old('company_name') }}" placeholder="Ex. PT. IMP Studio" required>
+                </div>
+                <div class="service">
+                    <label for="service">Service</label>
+                    <select name="service" id="service">
+                        @forelse ($services as $service)
+                            <option value="{{ $service->id }}">{{ $service->title }}</option>
+                        @empty
+                            <option value="">Belum ada informasi</option>
+                        @endforelse
+                    </select>
+                </div>
+                <div class="project-theme">
+                    <label for="project_theme">Project Theme</label>
+                    <select name="project_theme" id="project_theme">
+                        @forelse ($project_themes as $project_theme)
+                            <option value="{{ $project_theme->id }}">{{ $project_theme->name }}</option>
+                        @empty
+                            <option value="0">Belum ada informasi</option>
+                        @endforelse
+                    </select>
+                </div>
+                <div class="project-details">
+                    <label for="project_details">Project Details</label>
+                    <input type="text" id="project_details" name="project_details" value="{{ old('project_details') }}" required>
+                </div>
+                <div class="last-row">
+                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></button>
                 </div>
             </div>
         </form>
@@ -97,28 +152,36 @@
         <div class="faq-dec">Need To Know</div>
         <h5>Frequently Asked Questions</h5>
         <div class="faq-list">
-            <div class="faq">
+            {{-- <div class="faq">
                 <div class="question">
                     <p>Mengapa Bebek kakiknya dua?</p>
                     <p>v</p>
                 </div>
-            </div>
-            <div class="faq active">
+            </div> --}}
+            @forelse ($faqs as $faq)
+                <div class="faq">
+                    <div class="question">
+                        <p>{{ $faq->question }}</p>
+                        <img
+                            loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"
+                            class="open-close-icon"
+                            alt=""
+                        />
+                    </div>
+                    <div class="answer">
+                        {{ $faq->answer }}
+                    </div>
+                </div>
+            @empty
+                <h1>Tidak ada informasi</h1>
+            @endforelse
+            {{-- <div class="faq">
                 <div class="question">
                     <p>Mengapa Bebek kakiknya dua?</p>
                     <p>v</p>
                 </div>
-                <div class="answer">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, deserunt totam! Error laudantium
-                    quasi, impedit cupiditate quo ipsum repellat quisquam.
-                </div>
-            </div>
-            <div class="faq">
-                <div class="question">
-                    <p>Mengapa Bebek kakiknya dua?</p>
-                    <p>v</p>
-                </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <!-- FAQ End -->
@@ -129,7 +192,7 @@
         <h2>Let’s Turn Your <span>Dream Into Reality</span></h2>
         <p>Our team provides 24-hour support to help your business outperform competitors with precise and
             cost-effective solutions</p>
-        <a href="#" class="contact-us">Contact Us
+        <a href="/contact-us" class="contact-us">Contact Us
             <img src="{{ asset('/img/arrowright.png') }}" alt="" class="arrow-right">
         </a>
     </div>
@@ -237,5 +300,65 @@
         </p>
     </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        let formData = new FormData(this); // Get form data
 
+        fetch(this.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Data Berhasil Disimpan!",
+                    icon: "success",
+                    confirmButtonText: "OK"
+                }).then(() => {
+                    document.getElementById("contact-form").reset(); // Reset form after success
+                });
+            } else {
+                Swal.fire({
+                    title: "Something Wrong!",
+                    text: "Please check your inputs.",
+                    icon: "error",
+                    confirmButtonText: "OK"
+                });
+            }
+        })
+        .catch(error => {
+            Swal.fire({
+                title: "Something Wrong!",
+                text: "An unexpected error occurred.",
+                icon: "error",
+                confirmButtonText: "OK"
+            });
+        });
+    });
+    document.querySelectorAll(".faq").forEach(card => {
+        card.addEventListener("click", function () {
+            event.preventDefault();
+            let img = this.querySelector(".open-close-icon");
+
+            // Toggle the "active" class
+            this.classList.toggle("active");
+
+            // Change image source based on active state
+            if (this.classList.contains("active")) {
+                img.src="https://cdn.builder.io/api/v1/image/assets/TEMP/8bceb6f8f4bfc3b29b89aa503e960f447eb5b97fe0963ee3178cc1f991abddc7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Change to opened image
+            } else {
+                img.src = "https://cdn.builder.io/api/v1/image/assets/TEMP/ff274f990d28a14b5cc8942e4393a964293ad1024bedef694b1542ae5f8442e7?placeholderIfAbsent=true&apiKey=cee2b761989b4cd4b33e212a2290fbe6"; // Revert back
+            }
+            });
+        });
+    });
+</script>
 </html>
