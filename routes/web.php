@@ -23,7 +23,7 @@ use App\Http\Controllers\formContactUsController;
 
 // user
 Route::get('/', function () {
-    return view('homepage');
+    return view('welcome');
 });
 
 Route::get('/portofolio', function () {

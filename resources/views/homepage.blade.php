@@ -217,7 +217,7 @@
             <div class="ceo-section">
                 <div class="testimonial-container">
                     <img loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cc72f00dca422427fe3591b06eca9c10b94784c9c52f721b075be39dc9ac8ff?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
+                        src="{{ asset('img/agung_laksono.webp') }}"
                         class="testimonial-image" alt="Customer testimonial background image" />
                     <div class="content-wrapper">
                         <div class="logo-container">
@@ -240,15 +240,15 @@
                         <div class="container">
                             <div class="row justify-content-between">
                                 <div class="col-auto stat-item">
-                                    <div class="percentage">73%</div>
+                                    <div class="percentage">40+</div>
                                     <div class="stat-description">
-                                        Lorem Ipsum Dolor Sit amet.
+                                        Employee IMP Studio
                                     </div>
                                 </div>
                                 <div class="col-auto stat-item">
-                                    <div class="percentage">3x</div>
+                                    <div class="percentage">10+</div>
                                     <div class="stat-description">
-                                        Lorem Ipsum Dolor Sit amet.
+                                        Product IMP STudio
                                     </div>
                                 </div>
                             </div>
