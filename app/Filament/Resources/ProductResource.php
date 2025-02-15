@@ -63,7 +63,7 @@ class ProductResource extends Resource
             Tables\Columns\ImageColumn::make('image'),
             Tables\Columns\TextColumn::make('project_theme.name'),
             Tables\Columns\TextColumn::make('caption')->limit(200)->wrap(),
-            Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
+            Tables\Columns\TextColumn::make('updated_at'),
         ])
         ->filters([
             SelectFilter::make('project_theme')
@@ -83,14 +83,14 @@ class ProductResource extends Resource
             ]),
         ]);
     }
-            
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-                    
+
     public static function getPages(): array
     {
         return [

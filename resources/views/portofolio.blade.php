@@ -60,8 +60,9 @@
     <div class="product-section">
         <div class="product-dec">Our Product</div>
         <h1>Our Work in Action</h1>
-        <p>Take a closer look at our products, where quality meets functionality. We’re here to provide solutions that fit seamlessly into your world.</p>
-
+        <p>Take a closer look at our products, where quality meets functionality.
+            We’re here to provide solutions that fit seamlessly into your world.
+        </p>
         @forelse ($products as $product)
             @if ($loop->even)
                 <div class="container">

@@ -196,8 +196,8 @@
                                 </div>
                             </div>
 
-                            <!-- Year Dedicated Company Section -->
                             <div class="col-md-4 d-flex align-items-center px-4">
+                            <!-- Year Dedicated Company Section -->
                                 <div>
                                     <span class="d-block fs-1 fw-bold">7+</span>
                                     <span class="fs-5">Year Dedicated Company</span>
@@ -222,7 +222,9 @@
                     <div class="content-wrapper">
                         <div class="logo-container">
                             <img loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
+                                src="https://cdn.builder.io/api/v1/image/assets/
+                                TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?
+                                placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
                                 class="company-logo" alt="Company logo" />
                         </div>
                         <div class="testimonial-content">
@@ -241,15 +243,11 @@
                             <div class="row justify-content-between">
                                 <div class="col-auto stat-item">
                                     <div class="percentage">40+</div>
-                                    <div class="stat-description">
-                                        Employee IMP Studio
-                                    </div>
+                                    <div class="stat-description">Employee IMP Studio</div>
                                 </div>
                                 <div class="col-auto stat-item">
                                     <div class="percentage">10+</div>
-                                    <div class="stat-description">
-                                        Product IMP STudio
-                                    </div>
+                                    <div class="stat-description">Product IMP Studio</div>
                                 </div>
                             </div>
                         </div>

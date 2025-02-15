@@ -97,7 +97,8 @@
                 </div>
                 <div class="company-name">
                     <label for="company_name">Company Name</label>
-                    <input type="text" id="company_name" name="company_name" value="{{ old('company_name') }}" placeholder="Ex. PT. IMP Studio" required>
+                    <input type="text" id="company_name" name="company_name" value="{{ old('company_name') }}"
+                     placeholder="Ex. PT. IMP Studio" required>
                 </div>
                 <div class="service">
                     <label for="service">Service</label>
@@ -124,7 +125,8 @@
                     <input type="text" id="project_details" name="project_details" value="{{ old('project_details') }}" required>
                 </div>
                 <div class="last-row">
-                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up"></button>
+                    <button type="submit" class="submit">Submit <img src="{{ asset('/img/arrowup.png') }}" alt="" class="arrow-up">
+                    </button>
                 </div>
             </div>
         </form>
@@ -304,7 +306,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("contact-form").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
-        
+
         let formData = new FormData(this); // Get form data
 
         fetch(this.action, {

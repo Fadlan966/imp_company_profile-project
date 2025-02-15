@@ -56,7 +56,7 @@ class MailResource extends Resource
                 Tables\Columns\TextColumn::make('service.title'),
                 Tables\Columns\TextColumn::make('project_theme.name'),
                 Tables\Columns\IconColumn::make('replied')->boolean(),
-                Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
+                Tables\Columns\TextColumn::make('updated_at'),
             ])
             ->filters([
                 SelectFilter::make('service')

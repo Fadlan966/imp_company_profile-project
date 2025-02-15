@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Navigation\NavigationGroup;
- 
+
 class MemberResource extends Resource
 {
     protected static ?string $model = Member::class;
@@ -54,7 +54,7 @@ class MemberResource extends Resource
                 Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('division.name'),
                 Tables\Columns\IconColumn::make('is_show')->boolean(),
-                Tables\Columns\TextColumn::make('updated_at') ?? Tables\Columns\TextColumn::make('created_at'),
+                Tables\Columns\TextColumn::make('updated_at'),
             ])
             ->filters([
                 SelectFilter::make('division')
