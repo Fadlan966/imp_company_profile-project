@@ -187,7 +187,7 @@
                         <div class="col-md-4 impactful-projects">
                             <div>
                                 <span class="d-block fs-1 fw-bold">150+</span>
-                                <span class="fs-5">Impactful Project List</span>
+                                <span>Impactful Project List</span>
                             </div>
                         </div>
 
@@ -195,16 +195,15 @@
                         <div class="col-md-4 respected-customers">
                             <div>
                                 <span class="d-block fs-1 fw-bold">30+</span>
-                                <span class="fs-5">Respected Customers</span>
+                                <span>Respected Customers</span>
                             </div>
                         </div>
 
                         <div class="col-md-4 d-flex align-items-center px-4 year-dedicated-company">
                             <!-- Year Dedicated Company Section -->
-                            
                             <div>
                                 <span class="d-block fs-1 fw-bold">7+</span>
-                                <span class="fs-5">Year Dedicated Company</span>
+                                <span>Year Dedicated Company</span>
                             </div>
                         </div>
                     </div>
