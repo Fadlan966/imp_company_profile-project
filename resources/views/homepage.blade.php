@@ -23,7 +23,8 @@
                 <a href="/about-us">About Us</a>
                 <a href="/portofolio">Portofolio</a>
             </div>
-            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}" class="arrow-up"/></a>
+            <a href="/contact-us" class="contact-us">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}"
+                    class="arrow-up" /></a>
         </nav>
     </div>
     <!-- Navbar End -->
@@ -45,7 +46,8 @@
             Our team provides 24-hour support to help your business outperform
             competitors <br />with precise and cost-effective solutions
         </p>
-        <a href="/contact-us" class="contact-us" style="color: white">Contact Us <img src="{{ asset('img/Arrow up-right.png') }}" alt="" class="arrow-right" />
+        <a href="/contact-us" class="contact-us" style="color: white">Contact Us <img
+                src="{{ asset('img/Arrow up-right.png') }}" alt="" class="arrow-right" />
         </a>
     </div>
 
@@ -109,7 +111,8 @@
                     </div>
                     <h2 class="title text-center">{{ $service->title }}</h2>
                     <!-- Tambahkan text-start -->
-                    <div class="image-container"><img style="width: 100%" src="{{ asset("/storage/$service->image") }}" alt="{{ $service->title }} image"></div>
+                    <div class="image-container"><img style="width: 100%"
+                            src="{{ asset("/storage/$service->image") }}" alt="{{ $service->title }} image"></div>
                 </div>
             @empty
                 <h1>Tidak tersedia informasi</h1>
@@ -117,205 +120,202 @@
         </div>
 
     </div>
-        <!-- Our Mission -->
-        <div class="our-mission-section">
-            <div class="our-mission-box">Our Mission</div>
-            <h1>
-                Committed to <span style="color: #bde0fe">quality</span>, talent
-                <span style="color: #bde0fe">development</span>, infrastructure
-                <span style="color: #bde0fe">growth</span>, world-class
-                <span style="color: #bde0fe">services</span>, and employee
-                <span style="color: #bde0fe">well-being</span>.
-            </h1>
-            <p>
-                First impressions matter. That's why our mission is to create clean, enduring designs that elevate. First impressions
-                <br /> matter. That's why our mission.
-            </p>
-        </div>
-        <!-- Work proud -->
-        <div class="work-proud-section">
-            <div class="work-proud-box">Work that Make Us Proud</div>
-            <h1>
-                Recent Works, <span style="color: #bde0fe">Notable Impact</span>
-            </h1>
+    <!-- Our Mission -->
+    <div class="our-mission-section">
+        <div class="our-mission-box">Our Mission</div>
+        <h1>
+            Committed to <span style="color: #bde0fe">quality</span>, talent
+            <span style="color: #bde0fe">development</span>, infrastructure
+            <span style="color: #bde0fe">growth</span>, world-class
+            <span style="color: #bde0fe">services</span>, and employee
+            <span style="color: #bde0fe">well-being</span>.
+        </h1>
+        <p>
+            First impressions matter. That's why our mission is to create clean, enduring designs that elevate. First impressions
+            <br /> matter. That's why our mission.
+        </p>
+    </div>
+    <!-- Work proud -->
+    <div class="work-proud-section">
+        <div class="work-proud-box">Work that Make Us Proud</div>
+        <h1>
+            Recent Works, <span style="color: #bde0fe">Notable Impact</span>
+        </h1>
 
-            <div class="container mt-5">
-                <div class="careers-container">
-                    <div class="roles-section">
-                        <div class="designer-role">
-                            <h2 class="role-title">UI/UX Designer</h2>
-                            <p class="role-description">
-                                UI/UX Designers craft visually appealing and user-friendly
-                                interfaces. They ensure a seamless and engaging user
-                                experience.
-                            </p>
-                        </div>
-
-                        <div class="engineer-role">
-                            <h2 class="engineer-title">Software Engineer</h2>
-                            <p class="engineer-description">
-                                Software Engineers develop and maintain scalable applications.
-                                They solve technical problems and implement new features.
-                            </p>
-                        </div>
-
-                        <div class="devops-role">
-                            <h2 class="devops-title">DevOps Engineer</h2>
-                            <p class="devops-description">
-                                DevOps Engineers automate and optimize software delivery
-                                pipelines. They ensure stable and efficient infrastructure
-                                management.
-                            </p>
-                        </div>
+        <div class="container mt-5">
+            <div class="careers-container">
+                <div class="roles-section">
+                    <div class="designer-role">
+                        <h2 class="role-title">UI/UX Designer</h2>
+                        <p class="role-description">
+                            UI/UX Designers craft visually appealing and user-friendly
+                            interfaces. They ensure a seamless and engaging user
+                            experience.
+                        </p>
                     </div>
 
-                    <div class="image-box">
-                        <img loading="lazy"
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513b005ae73be43fdc66604306cff21836c945f9b51a90199578d8779b311ec"
-                            class="team-image" alt="Team collaboration illustration" />
+                    <div class="engineer-role">
+                        <h2 class="engineer-title">Software Engineer</h2>
+                        <p class="engineer-description">
+                            Software Engineers develop and maintain scalable applications.
+                            They solve technical problems and implement new features.
+                        </p>
+                    </div>
+
+                    <div class="devops-role">
+                        <h2 class="devops-title">DevOps Engineer</h2>
+                        <p class="devops-description">
+                            DevOps Engineers automate and optimize software delivery
+                            pipelines. They ensure stable and efficient infrastructure
+                            management.
+                        </p>
                     </div>
                 </div>
-            </div>
-            <div class="amount-company-project">
-                <div class="stats-section py-3">
-                    <div class="container">
-                        <div class="row justify-content-start text-center text-white">
-                            <!-- Impactful Projects Section -->
-                            <div class="col-md-4 impactful-projects">
-                                <div>
-                                    <span class="d-block fs-1 fw-bold">150+</span>
-                                    <span class="fs-5">Impactful Project List</span>
-                                </div>
-                            </div>
 
-                            <!-- Respected Customers Section -->
-                            <div class="col-md-4 respected-customers">
-                                <div>
-                                    <span class="d-block fs-1 fw-bold">30+</span>
-                                    <span class="fs-5">Respected Customers</span>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 d-flex align-items-center px-4">
-                            <!-- Year Dedicated Company Section -->
-                                <div>
-                                    <span class="d-block fs-1 fw-bold">7+</span>
-                                    <span class="fs-5">Year Dedicated Company</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- what our -->
-            <div class="what-our-section">
-                <div class="what-our-box">What Our Users Say</div>
-                <h1>
-                    Trusted By <span style="color: #bde0fe">Businesses</span> Like Yours
-                </h1>
-            </div>
-            <div class="ceo-section">
-                <div class="testimonial-container">
+                <div class="image-box">
                     <img loading="lazy"
-                        src="{{ asset('img/agung_laksono.webp') }}"
-                        class="testimonial-image" alt="Customer testimonial background image" />
-                    <div class="content-wrapper">
-                        <div class="logo-container">
-                            <img loading="lazy"
-                                src="https://cdn.builder.io/api/v1/image/assets/
-                                TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?
-                                placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
-                                class="company-logo" alt="Company logo" />
-                        </div>
-                        <div class="testimonial-content">
-                            <div class="quote-text">
-                                At IMP Studio, we turn innovative ideas into impactful
-                                realities. Every challenge is an opportunity to push
-                                boundaries. We create experiences that leave a lasting mark.
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/c513b005ae73be43fdc66604306cff21836c945f9b51a90199578d8779b311ec"
+                        class="team-image" alt="Team collaboration illustration" />
+                </div>
+            </div>
+        </div>
+        <div class="amount-company-project">
+            <div class="stats-section py-3">
+                <div class="container">
+                    <div class="row justify-content-start text-center text-white">
+                        <!-- Impactful Projects Section -->
+                        <div class="col-md-4 impactful-projects">
+                            <div>
+                                <span class="d-block fs-1 fw-bold">150+</span>
+                                <span class="fs-5">Impactful Project List</span>
                             </div>
-                            <div class="author-info">
-                                <div class="author-name">Agung Laksono</div>
-                                <div class="author-title">Co - Founder & CEO IMP Studio</div>
-                            </div>
-                            <hr />
                         </div>
-                        <div class="container">
-                            <div class="row justify-content-between">
-                                <div class="col-auto stat-item">
-                                    <div class="percentage">40+</div>
-                                    <div class="stat-description">Employee IMP Studio</div>
-                                </div>
-                                <div class="col-auto stat-item">
-                                    <div class="percentage">10+</div>
-                                    <div class="stat-description">Product IMP Studio</div>
-                                </div>
+
+                        <!-- Respected Customers Section -->
+                        <div class="col-md-4 respected-customers">
+                            <div>
+                                <span class="d-block fs-1 fw-bold">30+</span>
+                                <span class="fs-5">Respected Customers</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-flex align-items-center px-4">
+                            <!-- Year Dedicated Company Section -->
+                            <div>
+                                <span class="d-block fs-1 fw-bold">7+</span>
+                                <span class="fs-5">Year Dedicated Company</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- testimonial -->
-            <div class="testimoni-section">
-                <div class="container mt-5">
-                    <div class="row justify-content-center gy-4 align-items-stretch">
-                        <div class="col-md-4 d-flex">
-                            <div class="testimonial">
-                                <img src="{{ asset('img/telkom.png') }}" class="logo-img" />
-                                <div class="stars-container">
-                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
-                                </div>
-                                <p class="rating">8/10</p>
-                                <p>
-                                    “IMP Studio mampu menjawab kebutuhan operasional kami dengan
-                                    tepat dan cepat. Kehandalan aplikasi juga terjaga dengan
-                                    baik sehingga dapat mengakselerasi proses kerja.”
-                                </p>
-                                <p class="name">Darmawan</p>
-                                <p class="position">Tim Telkom Digireview</p>
-                            </div>
+        </div>
+        <!-- what our -->
+        <div class="what-our-section">
+            <div class="what-our-box">What Our Users Say</div>
+            <h1>
+                Trusted By <span style="color: #bde0fe">Businesses</span> Like Yours
+            </h1>
+        </div>
+        <div class="ceo-section">
+            <div class="testimonial-container">
+                <img loading="lazy" src="{{ asset('img/agung_laksono.webp') }}" class="testimonial-image"
+                    alt="Customer testimonial background image" />
+                <div class="content-wrapper">
+                    <div class="logo-container">
+                        <img loading="lazy"
+                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
+                            class="hero-dream__logo-img" alt="Company Logo" />
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="quote-text">
+                            At IMP Studio, we turn innovative ideas into impactful
+                            realities. Every challenge is an opportunity to push
+                            boundaries. We create experiences that leave a lasting mark.
                         </div>
-
-                        <div class="col-md-4 d-flex">
-                            <div class="testimonial">
-                                <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
-                                <div class="stars-container">
-                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
-                                </div>
-                                <p class="rating">9/10</p>
-                                <p>
-                                    “IMP ini perusahaan yang bagus, hasil pekerjaan yang mereka
-                                    kerjakan sesuai dengan perencanaan yang kita inginkan;
-                                    responsif dalam penyelesaian problem.”
-                                </p>
-                                <p class="name">Muhtadin</p>
-                                <p class="position">
-                                    Pusdiklat Tenaga Teknis Pendidikan dan Keagamaan
-                                </p>
-                            </div>
+                        <div class="author-info">
+                            <div class="author-name">Agung Laksono</div>
+                            <div class="author-title">Co - Founder & CEO IMP Studio</div>
                         </div>
-
-                        <div class="col-md-4 d-flex">
-                            <div class="testimonial">
-                                <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
-                                <div class="stars-container">
-                                    <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
-                                </div>
-                                <p class="rating">8.9/10</p>
-                                <p>“Mantap, Elegan, Good Looking.”</p>
-                                <p class="name">Wildan Taufik</p>
-                                <p class="position">Ketua Tim Sistem Informasi PD Pontren</p>
+                        <hr />
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-auto stat-item">
+                                <div class="percentage">40+</div>
+                                <div class="stat-description">Employee IMP Studio</div>
+                            </div>
+                            <div class="col-auto stat-item">
+                                <div class="percentage">10+</div>
+                                <div class="stat-description">Product IMP Studio</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- FAQ -->
-            <div class="faq-section">
-                <div class="faq-box">Need to Know</div>
-                <h1>Frequently Asked Questions</h1>
-                <div class="faq-componet">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        @forelse ($faqs as $faq)
+        </div>
+        <!-- testimonial -->
+        <div class="testimoni-section">
+            <div class="container mt-5">
+                <div class="row justify-content-center gy-4 align-items-stretch">
+                    <div class="col-md-4 d-flex">
+                        <div class="testimonial">
+                            <img src="{{ asset('img/telkom.png') }}" class="logo-img" />
+                            <div class="stars-container">
+                                <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
+                            </div>
+                            <p class="rating">8/10</p>
+                            <p>
+                                “IMP Studio mampu menjawab kebutuhan operasional kami dengan
+                                tepat dan cepat. Kehandalan aplikasi juga terjaga dengan
+                                baik sehingga dapat mengakselerasi proses kerja.”
+                            </p>
+                            <p class="name">Darmawan</p>
+                            <p class="position">Tim Telkom Digireview</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="testimonial">
+                            <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
+                            <div class="stars-container">
+                                <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
+                            </div>
+                            <p class="rating">9/10</p>
+                            <p>
+                                “IMP ini perusahaan yang bagus, hasil pekerjaan yang mereka
+                                kerjakan sesuai dengan perencanaan yang kita inginkan;
+                                responsif dalam penyelesaian problem.”
+                            </p>
+                            <p class="name">Muhtadin</p>
+                            <p class="position">
+                                Pusdiklat Tenaga Teknis Pendidikan dan Keagamaan
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 d-flex">
+                        <div class="testimonial">
+                            <img src="{{ asset('img/kemenag_img.webp') }}" class="logo-img" />
+                            <div class="stars-container">
+                                <img src="{{ asset('img/star-fill.svg') }}" alt="Star" class="star-icon" />
+                            </div>
+                            <p class="rating">8.9/10</p>
+                            <p>“Mantap, Elegan, Good Looking.”</p>
+                            <p class="name">Wildan Taufik</p>
+                            <p class="position">Ketua Tim Sistem Informasi PD Pontren</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <div class="faq-section">
+            <div class="faq-box">Need to Know</div>
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-componet">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    @forelse ($faqs as $faq)
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -333,13 +333,13 @@
                                 </div>
                             </div>
                         </div>
-                        @empty
-                            <h1>Tidak tersedia informasi</h1>
-                        @endforelse
-                    </div>
+                    @empty
+                        <h1>Tidak tersedia informasi</h1>
+                    @endforelse
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- sub-footer start -->
     <div class="sub-footer">
