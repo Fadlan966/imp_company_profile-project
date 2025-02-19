@@ -199,8 +199,9 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 d-flex align-items-center px-4">
+                        <div class="col-md-4 d-flex align-items-center px-4 year-dedicated-company">
                             <!-- Year Dedicated Company Section -->
+                            
                             <div>
                                 <span class="d-block fs-1 fw-bold">7+</span>
                                 <span class="fs-5">Year Dedicated Company</span>

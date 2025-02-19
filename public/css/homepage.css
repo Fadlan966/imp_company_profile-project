@@ -397,7 +397,7 @@
     display: flex;
     align-items: center;
     border-right: 1px solid #007bff; /* You can change the color code as needed */
-    padding-left: 5rem;  /* px-4 equivalent in rem */
+    padding-left: 2rem;  /* px-4 equivalent in rem */
     padding-right: 1rem; /* px-4 equivalent in rem */
   }
 
@@ -405,8 +405,15 @@
     display: flex;
     align-items: center;
     border-right: 1px solid #007bff; /* You can change the color code as needed */
-    padding-left: 9rem;  /* px-4 equivalent in rem */
+    padding-left: 3rem;  /* px-4 equivalent in rem */
     padding-right: 1rem; /* px-4 equivalent in rem */
+  }
+
+  .year-dedicated-company {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 1rem;
   }
 
   .what-our-section {
