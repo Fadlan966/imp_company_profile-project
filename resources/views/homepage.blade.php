@@ -371,11 +371,10 @@
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
             class="imp-logo" alt="Company Logo" />
         <p class="company-info-detail">
-            IMP Studio is a partner in planning, analysis, and information
-        </p>
+        IMP Studio is a partner in planning, analysis, and information
         technology development for your business. Managed by a proficient team
         with over 10 years of experience.
-
+        </p>
         <div class="details">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-geo-alt" viewBox="0 0 16 16">

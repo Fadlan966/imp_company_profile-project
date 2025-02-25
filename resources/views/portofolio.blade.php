@@ -117,10 +117,9 @@
             class="imp-logo" alt="Company Logo" />
         <p class="company-info-detail">
             IMP Studio is a partner in planning, analysis, and information
+            technology development for your business. Managed by a proficient team
+            with over 10 years of experience.
         </p>
-        technology development for your business. Managed by a proficient team
-        with over 10 years of experience.
-
         <div class="details">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-geo-alt" viewBox="0 0 16 16">
