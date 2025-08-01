@@ -312,8 +312,8 @@
         <!-- FAQ -->
         <div class="faq-section">
             <div class="faq-box">Need to Know</div>
-            <h1>Frequently Asked Questions</h1>
-            <div class="faq-componet">
+            <h1 class="faq-title">Frequently Asked Questions</h1>
+            <div class="faq-component">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     @forelse ($faqs as $faq)
                         <div class="accordion-item">
@@ -321,20 +321,23 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapse{{ $faq->id }}" aria-expanded="false"
                                     aria-controls="flush-collapse{{ $faq->id }}">
-                                    {{ $faq->question }}
-                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="icon"
-                                        class="accordion-icon" />
+                                    <span class="faq-question">{{ $faq->question }}</span>
+                                    <img src="{{ asset('img/chevron-down.svg') }}" alt="Expand/collapse icon"
+                                        class="accordion-icon" aria-hidden="true" />
                                 </button>
                             </h2>
                             <div id="flush-collapse{{ $faq->id }}" class="accordion-collapse collapse"
+                                aria-labelledby="flush-heading{{ $faq->id }}"
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
-                                    {{ $faq->answer }}
+                                    <p class="faq-answer">{{ $faq->answer }}</p>
                                 </div>
                             </div>
                         </div>
                     @empty
-                        <h1>Tidak tersedia informasi</h1>
+                        <div class="no-faqs-message">
+                            <p>No FAQs available at the moment.</p>
+                        </div>
                     @endforelse
                 </div>
             </div>
@@ -371,9 +374,9 @@
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3f9bf6ed40772688cfee412de084ec65498877b8c29c34be09050bd039b631d5?placeholderIfAbsent=true&apiKey=51d67b9452d14157a8d4e7f70c371917"
             class="imp-logo" alt="Company Logo" />
         <p class="company-info-detail">
-        IMP Studio is a partner in planning, analysis, and information
-        technology development for your business. Managed by a proficient team
-        with over 10 years of experience.
+            IMP Studio is a partner in planning, analysis, and information
+            technology development for your business. Managed by a proficient team
+            with over 10 years of experience.
         </p>
         <div class="details">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
